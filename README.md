@@ -100,10 +100,8 @@ python continuous_distilled/evaluate.py --help
 python continuous_distilled/tune.py --help
 ```
 
-## 验证与来源
+## 验证状态
 
 已检查 Python 语法和命令行入口，尚未完成全量重新训练及跨机器复现。
-
-基础实现来源：[EffiPOI](https://github.com/pcm1217/EffiPOI)。本仓库的扩展代码与对比实验适配不应被表述为全部从零原创。仓库公开不等于授予任意再分发许可；在补充许可证前，请核对基础项目和各依赖的使用条款。
 
 代码公开地址：<https://github.com/zds2085741561-afk/Pol>
