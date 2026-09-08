@@ -11,7 +11,7 @@ from copy import copy
 import numpy as np
 import torch
 
-from innovation2_continuous_eval import (
+from evaluate import (
     build_flow_community_tokens,
     dataset_immutability_guard,
     evaluate,
@@ -71,7 +71,7 @@ def parse_args():
     parser.add_argument("--transition_eps", type=float, default=1e-6)
     parser.add_argument("--max_samples", type=int, default=512)
     parser.add_argument("--seed", type=int, default=2020)
-    parser.add_argument("--output_dir", default="innovation2_s3_kf_results")
+    parser.add_argument("--output_dir", default="results/continuous_distilled")
     parser.add_argument("--force_cuda", action="store_true")
     parser.add_argument("--cpu", action="store_true")
     parser.add_argument("--no_base_local_rerank", action="store_true")

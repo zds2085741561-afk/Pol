@@ -212,7 +212,7 @@ def parse_args():
         default="",
         help="EffiPOI project root; defaults to the directory containing this script",
     )
-    parser.add_argument("--output_dir", default="innovation2_s3_kf_results")
+    parser.add_argument("--output_dir", default="results/continuous_distilled")
     parser.add_argument("--force_cuda", action="store_true")
     parser.add_argument("--cpu", action="store_true")
     parser.add_argument(

@@ -1,10 +1,10 @@
 # Pol: Sequential POI Recommendation
 
-面向序列兴趣点推荐的研究代码库，包含教师—学生知识蒸馏、乘积量化（PQ）、轨迹流图增强、多兴趣建模及重排序实验。本仓库基于 [EffiPOI](https://github.com/pcm1217/EffiPOI) 进行扩展，用于代码公开、实验检查和后续复现。
+序列兴趣点推荐实验代码，基于 [EffiPOI](https://github.com/pcm1217/EffiPOI) 扩展，包含教师—学生知识蒸馏、乘积量化、轨迹流增强和多兴趣建模。
 
-## 发布内容
+## 目录
 
-当前发布的是本地研究代码快照。教师默认配置启用 GTF、MIC 和 MIFG；学生入口支持完整学生模型以及 TF-KD、TF-PQ、TFCA、CMID 等实验开关。不同实验需使用对应参数，不能仅凭文件名认定为论文中的某一行结果。
+教师默认启用轨迹流图、多兴趣建模和局部重排序。学生支持不同蒸馏与量化设置，运行参数见各入口的 `--help`。
 
 | 路径 | 内容 |
 | --- | --- |
@@ -14,7 +14,8 @@
 | `props/` | 教师、学生及通用配置 |
 | `tools/` | STEPS 数据转换和下载辅助工具 |
 | `baselines/` | CL-SASRec、MIMAR、S2HyRec、BSARec 实验适配代码 |
-| `innovation2_e3/`、`innovation2_s3_kf/` | 连续推荐及验证集调参脚本 |
+| `continuous_base/` | 基础学生的连续推荐评估与调参 |
+| `continuous_distilled/` | 蒸馏学生的连续推荐评估与调参 |
 | `experiments/` | 筛选后的历史日志、结果文件及来源校验索引 |
 
 ## 环境准备
@@ -51,7 +52,7 @@ STEPS 转换入口：
 python tools/steps_effi_builder_v2/build_steps_effi_files_v2.py --help
 ```
 
-该工具生成的是确定性哈希文本特征，不能将其描述为预训练语言模型生成的语义特征。原有数据适配器在缺失特征或索引时有随机特征/零编码回退；正式实验必须先检查输入文件与运行日志，回退运行不能作为有效复现。根目录 `build_index.py` 是历史辅助脚本，含固定检查点和输出命名，不是通用的一键数据准备入口。
+该工具生成确定性哈希文本特征，并非预训练语言模型特征。正式实验需准备完整特征和索引；数据加载器的随机特征或零编码回退不能用于有效复现。
 
 ## 训练与评估
 
@@ -80,13 +81,24 @@ CPU 可使用 `--cpu` 替代 `--force_cuda`。全部选项请运行 `python teac
 
 ## 实验记录
 
-本次整理保留 43 份包含最终测试结果、无 traceback/OOM 且内容不重复的历史日志，以及 11 份最终/测试/复核结果 JSON。筛选未按测试成绩高低进行，部分记录可能是探索性实验。日志保留原始参数与指标，用户目录信息进行脱敏；`experiments/log_manifest.json` 记录原文件和发布文件的 SHA-256。
+`experiments/` 包含 43 份完成测试的历史日志和 11 份结果 JSON。日志保留参数和指标，未按成绩高低筛选；校验信息见 `experiments/log_manifest.json`。
 
-历史日志来自多个时期，尚未逐一建立“代码版本—参数—论文表格”对应关系，因此本 README 不将其汇总为已验证的论文结果。空日志、仅初始化日志、无最终测试结果的运行、模型权重及 TensorBoard 缓存未纳入本次发布；本地原件保留。
+历史日志包含探索性实验，尚未逐一对应论文表格；复现时请核对代码版本、数据和参数。
 
-## 验证状态与来源
+## 连续推荐
 
-发布检查包含 Python 语法解析、命令行帮助检查和文件筛选检查，未重新训练所有模型，也未完成跨机器端到端复现。依赖、数据特征和历史参数差异可能影响结果。
+两套实现分别保留基础学生与蒸馏学生的加载设置。指定自己的检查点进行评估或验证集调参：
+
+```bash
+python continuous_base/evaluate.py --help
+python continuous_base/tune.py --help
+python continuous_distilled/evaluate.py --help
+python continuous_distilled/tune.py --help
+```
+
+## 验证与来源
+
+已检查 Python 语法和命令行入口，尚未完成全量重新训练及跨机器复现。
 
 基础实现来源：[EffiPOI](https://github.com/pcm1217/EffiPOI)。本仓库的扩展代码与对比实验适配不应被表述为全部从零原创。仓库公开不等于授予任意再分发许可；在补充许可证前，请核对基础项目和各依赖的使用条款。
 
