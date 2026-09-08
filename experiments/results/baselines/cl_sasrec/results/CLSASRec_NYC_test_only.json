@@ -1,0 +1,17 @@
+{
+  "model": "CL-SASRec",
+  "dataset": "NYC",
+  "split": "test",
+  "protocol": "RecBole full-sort",
+  "checkpoint": "baselines\\cl_sasrec\\saved\\CLSASRec-Jun-29-2026_12-11-55.pth",
+  "test_result": {
+    "hit@1": 0.2493,
+    "hit@5": 0.5088,
+    "hit@10": 0.5737,
+    "hit@20": 0.6172,
+    "ndcg@1": 0.2493,
+    "ndcg@5": 0.3886,
+    "ndcg@10": 0.4098,
+    "ndcg@20": 0.4209
+  }
+}

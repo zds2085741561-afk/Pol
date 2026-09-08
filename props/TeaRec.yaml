@@ -1,0 +1,78 @@
+# =========================================================
+# TeaRec E4 Full Teacher: GTF + MIC + local MIFG rerank
+# Full teacher used for E4 training, evaluation, and student distillation.
+# =========================================================
+
+use_gpu: True
+gpu_id: 0
+
+# ---------- Teacher backbone ----------
+n_layers: 4
+n_heads: 4
+hidden_size: 300
+inner_size: 1200
+hidden_dropout_prob: 0.15
+attn_dropout_prob: 0.15
+hidden_act: 'gelu'
+layer_norm_eps: 1e-12
+initializer_range: 0.02
+loss_type: 'CE'
+
+# ---------- PLM / MoE ----------
+item_drop_ratio: 0.2
+item_drop_coefficient: 0.9
+lambda: 1e-3
+plm_suffix: feat1CLS
+plm_suffix_aug: feat2CLS
+train_stage: transductive_ft
+plm_size: 1664
+adaptor_dropout_prob: 0.10
+adaptor_layers: [1664, 300]
+temperature: 0.07
+n_exps: 4
+sinkhorn_iter: 3
+reassign_steps: 5
+stable_moe: False
+
+# ---------- E1 GTF retained ----------
+use_graph_feature: True
+flow_inner_weight: 0.2
+flow_target_weight: 1.0
+flow_smoothing: 1e-8
+flow_topk: 0
+use_2hop_flow: True
+flow_2hop_weight: 0.05
+use_graph_logit: True
+graph_alpha: 0.004
+graph_score_clip: 2.0
+use_flow_in_train: False
+target_aware_graph_pooling: False
+
+# NYC_STEPS/MASSIVE formal defaults are set in teacher_main.py:
+# flow_topk=500, flow_2hop_weight=0.10, graph_alpha=0.02, graph_score_clip=3.0
+
+# ---------- E2 MIC enabled ----------
+use_multi_interest: True
+num_interests: 4
+mic_aggregation: 'max'
+orth_weight: 0.01
+
+# ---------- E3 MIC-guided local trajectory-flow rerank ----------
+use_flow_multi_rerank: True
+flow_multi_topk: 20
+flow_multi_beta: 0.015
+flow_rerank_recent: 1
+flow_rerank_scale: 100.0
+flow_rerank_keep: 1
+flow_rerank_confidence: 0.30
+flow_rerank_primary_bonus: 0.0
+use_local_rerank: False
+
+# The same conservative local-rerank strength is used for all datasets.
+
+# ---------- Training ----------
+epochs: 300
+learning_rate: 0.001
+weight_decay: 0.0
+eval_step: 1
+stopping_step: 4

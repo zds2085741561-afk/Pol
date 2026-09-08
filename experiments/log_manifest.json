@@ -1,0 +1,260 @@
+[
+  {
+    "file": "logs/BSARecRecBole/BSARecRecBole-NYC-Jul-21-2026_15-00-40-4b222a.log",
+    "source_sha256": "110b8dca55216dcffee913d2a19bb10effdcb0729c84b6aa67cf6a7da57e61be",
+    "published_sha256": "2ee13e53233c707a1e3a80f32244eac617769b6bdedd9140af94c6878190a3ba",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/S2HyRecRecBole/S2HyRecRecBole-NYC_STEPS-Jul-21-2026_12-31-25-527cee.log",
+    "source_sha256": "728dd86f1f4711eb8cc66d7d09456c50f7c1611c73814bbdf44a8c6cc87cd68a",
+    "published_sha256": "983e0cd21ee91a44b9715cc3d021293aa7c10bdb6d46eefb0dcbfc536386dc38",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-08-2026_18-19-12-62d24f.log",
+    "source_sha256": "e9f97da15d349f720dcc7546745fa3bc8b446c8c4ac77f78f9874d39a1146a58",
+    "published_sha256": "f83b77ab6acfec2e0043092ff4115c67d5d4660d93a6f2ab98f0cd90061bbed8",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-09-2026_11-40-32-2134a2.log",
+    "source_sha256": "6361b28ac182876d7a0cb20afa32c5ea46de610bd951abdb7de0bc56a7487291",
+    "published_sha256": "6043fd75d1c70f9f28c9056ed642cb501a97dfed5b39a0920a4b19b3613510b6",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-10-2026_08-05-13-ea95f8.log",
+    "source_sha256": "ab97b4c2a218bb11f003d0f605d540d6512c40432331b3aba9926b8a4f2fcda4",
+    "published_sha256": "09751aeb1de848676ac56ff455055c5256777f4bc0c49332730ea7a1982a6bca",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-10-2026_17-54-30-3d64df.log",
+    "source_sha256": "d3675ca16d2900ed5e6a6416191eb5b845889e6b213709c26556704ecd6a3fd7",
+    "published_sha256": "5cbf60a52491f8e6d225e7281df843289485ebfd8ad6d716929c9129f91d2dbf",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-11-2026_14-15-13-09403c.log",
+    "source_sha256": "4f955058e008d95bbf61fdad60ae27c960933923046e499bec40d7948fe36192",
+    "published_sha256": "09efa43e94bd24c1feefcab705da4bf0d0afcb261527ea4ad850baf095fc7b6f",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-12-2026_10-04-43-07a6ca.log",
+    "source_sha256": "f401d157d9c1e2558ff33f94de24bfd9380eba1214f0ecec8a2628764d2e8230",
+    "published_sha256": "e4dffe2894a98a035b07432de0e16e7622a2b59763b709c97942ad916888ff82",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-13-2026_12-46-20-eb63d4.log",
+    "source_sha256": "ba0adfba7aba43f2080f6404fea631295ed5d173e6fb38c61213f8e4687b2a3a",
+    "published_sha256": "8afaf750e8fec626c3a6349459c9cca1534bef530fe2ad1007c3e2529b5547a7",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-14-2026_11-49-51-7bbfe4.log",
+    "source_sha256": "a2f4f6118ac723bfcb1d0b9ec4810c6b40f49de1743c0498ef0fd2c2ecfff5d0",
+    "published_sha256": "fec40a313d27f6720bfdb3413bedf599661b149e5d2c891cafa3268074dcee3e",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-14-2026_19-38-41-efd99f.log",
+    "source_sha256": "4fbe6194bd02f214b40649455e4d17a47247143262abd32e0f643a3355e2a2b7",
+    "published_sha256": "1a39ee63b84327876ccb8d88f9bc772dc1a91928f6bcbe390f4365779b7869ff",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-15-2026_09-28-13-f2caf4.log",
+    "source_sha256": "330bb1ac003f3607cedf1505ec341d0e1dfbe089c47926a99427cae104fba60b",
+    "published_sha256": "ca092187e82e0c161d58ab07128c50fa4d47e20cab5be1f4a85f3636327550b6",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-15-2026_09-31-40-1e8d32.log",
+    "source_sha256": "4cdde004531aaa9aa9abdc47ac823a4ae94837593ab668cd6575b8a7b234ae71",
+    "published_sha256": "11da621a9f3d0f3760c36c7bd5ee94a3c197833979e790af7b5b92a42d5db21a",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-15-2026_09-35-39-5e5217.log",
+    "source_sha256": "6406051c90ad155db942409e913d78c97363e6bec2a72047b691c600a5fc2228",
+    "published_sha256": "a865359e93e287220f68ecda1c11c5fd6ffe0e9c505812b386d5f68998c85128",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jul-15-2026_09-53-03-ccfbfc.log",
+    "source_sha256": "5238b3c2d624abc2f6ca2f1f0da06d8bcacbadc00b0e9e8375def54eefac1c98",
+    "published_sha256": "cac6c11beaec1932b96df85fa0d6ee36b7d3a2cadcc14e824af7b282e1f1164f",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jun-09-2026_10-12-35-40f73a.log",
+    "source_sha256": "28b17f9345ee9dca50e89cde6473209d0cf65da777785304506ff30ad1bf9c10",
+    "published_sha256": "5d367c2db66f8bbca951ed7aae5ab4e60fdace12943acf100725386076ad179f",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jun-10-2026_13-16-57-2033c3.log",
+    "source_sha256": "07e1348a128b329704f76284d575680ef6b068fe6e11be42c392835ba2b9ceec",
+    "published_sha256": "1ae6c5bf7f8673e49c832ecf34d721e0d4089673b954889d2b2fb69e83f80f6f",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC-Jun-11-2026_10-42-25-871a3d.log",
+    "source_sha256": "131dd99d9b315e98e19966d50da9705cab2ab7d6eedcc4b1447f7104bb268cb4",
+    "published_sha256": "9a4304288f4bbc8a4d74a95d33092254fbfa1f617c0b3f55afc1822717656787",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jul-09-2026_06-33-48-08be46.log",
+    "source_sha256": "60473ec9202d49e0a4db3b44041c7d2efbc0fac775f01af8697792f72e28e9c8",
+    "published_sha256": "e0b5b0147dae38ebe2b6a57637da6c170266e815cfee3fab4a88aa9176815e49",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jul-09-2026_16-41-46-2a40da.log",
+    "source_sha256": "2d7fcda4744da1cd0f5b9c7f18bc459889c05fe5a3d51c7c22c739357af953a9",
+    "published_sha256": "8f05e47f8744c26d0075cca985534ac91db4bec609b12dff6b1bd36b272a0c2b",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jul-11-2026_08-45-07-9c2b97.log",
+    "source_sha256": "2ff0a1e1a88fdd318c3b951aba18549b1fbe5bec5ebc2acdcbf5460ef1c93f04",
+    "published_sha256": "2a314338a50507a608a9b2f9e970f25890c8dcd5d67f79dca8105a015527e186",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jul-11-2026_17-58-41-d7f043.log",
+    "source_sha256": "7f8cf428c8041139389d6b7ce56458a09dadfc08363af6250d1f49034b4f99a8",
+    "published_sha256": "9cbe5a465b297f6a4506b10d7fca31537c563bd8f9fa9986198d279cb039344f",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jul-11-2026_18-40-25-3921e7.log",
+    "source_sha256": "b3db0f1a2c21c44bddc0d84d4bf6eb1df77da7eda05204912ca1b6185aaf1a4f",
+    "published_sha256": "6c7f817f151fe0c8b85adf61da8296ba11a53236845df3ce535ed5bcb26976fe",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jul-12-2026_15-05-59-35a13f.log",
+    "source_sha256": "71c637ea8711566141eecbdc0b0cb72b2c775a44934cd571639d326012e01557",
+    "published_sha256": "09b53d5b113c4c1f96578343970fec37240b2322501aa4535d561617fe64de6b",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jul-13-2026_17-10-12-f42426.log",
+    "source_sha256": "8ca6aa1ebd2336aabe16ee5fa2a0468e8f0b8618ca8125496e1ef230c34aab18",
+    "published_sha256": "147fe070e196f1c8b7212e130193cba8eede5af93d9dac9007ed44e928f64816",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jun-10-2026_15-53-20-ca9245.log",
+    "source_sha256": "eb6452da7a827aea7deb9f658e47570783ec9f0ad91825560eef7ec339a0a2e1",
+    "published_sha256": "47ae88590c58fc11c909bbd6182bab5fb51892ee978d1dbdc2a7b29bb1205b88",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jun-14-2026_10-39-37-0a7ce5.log",
+    "source_sha256": "2ffed84c4344891889e51ed07243e596cda7aa8272ba594d28c7ebbd11855e4d",
+    "published_sha256": "8712eb34b9508f7eb386b23f4be39db6ada2fc6014b358d21dce698b6e3af16e",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/StuRec/StuRec-NYC_STEPS-Jun-15-2026_11-04-09-ca00b7.log",
+    "source_sha256": "78bcc5e04baee1820588593e7b8118e6631f283b0c974e80f2c87d6dee8c1488",
+    "published_sha256": "720856d35aaf7536ac3e0327a47969fd059b48f385a4d76dc5305645ad1c9f78",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-Jun-01-2026_09-59-40-67e817.log",
+    "source_sha256": "a4dc22909f190f6bf9b08bce013eeb130c031de848503f5befaf6131ca3ef84e",
+    "published_sha256": "8ef9bf92451a506cbaa15094a435526dd36fc6325ecf306ceba0b90e5f11aa4c",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-Jun-02-2026_14-57-40-67e817.log",
+    "source_sha256": "38312f7a170d0c2d33667200aeb6315caa4c8b33bde5abf0cac74634b0b2c58f",
+    "published_sha256": "b0013e79eb5206d4eb512cfd59e426dc2e889ec3665c99a4ed0026e8a94b4682",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-Jun-02-2026_15-07-42-67e817.log",
+    "source_sha256": "0c91d76e5ad657ee0e278c541f5dce4611c1a5dabfb6226b947a40e899df46d6",
+    "published_sha256": "45c7eb080fee6e56b23410a094f914d5ad42bf557baa95e72e821e688e186749",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-Jun-06-2026_10-37-54-67e817.log",
+    "source_sha256": "54b68af5f475ec10c783e99704df80c0646d22829a3432083e203faba8442d6e",
+    "published_sha256": "1ea2d7daec43e7e20e672674f0c206a96b30963001b39007c0b8107da55166e6",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-Jun-06-2026_10-46-31-67e817.log",
+    "source_sha256": "3b9074c7b3495b65bc48cc5e24d2249ac8499f1d6edeae661a9836f72f7a962d",
+    "published_sha256": "ab675c33603d0c807028d9664bdbc26ccb3b51f3adb6fb12b569c2baa0b0bce6",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-Jun-06-2026_10-53-14-67e817.log",
+    "source_sha256": "91cedc17111b6eaa7d509949f70ced8c4bea41798c7722cb22dc9df468672052",
+    "published_sha256": "2ba836828a4abfc46297e70b648800bac38afc55056feabca840bca170300ddd",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-May-29-2026_11-16-08-342780.log",
+    "source_sha256": "bc25cd67b9ad796a17a87d8b9143365009c93501592e2537b58503b797a9d645",
+    "published_sha256": "0c7b5f636f8e6dcfd0e5ba829bd3c81ff4cc1540c7b5dfec226a2bf7ec847a5a",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-May-29-2026_11-29-02-342780.log",
+    "source_sha256": "b95eb06d19e4430fd3049f19fc548ee650c776a1bad40f243aca928a1fcf56c6",
+    "published_sha256": "3d0cec57c803ffa0756f4baa056c417ed999f275fae8357f71ff629e280cfadf",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-May-29-2026_11-38-46-444e6f.log",
+    "source_sha256": "fb47a3f52d70c7b92ff06de1696757ca0aff0e1ca065d308e0d52ffc917515dc",
+    "published_sha256": "96e5146a1861f763db333c922945c41f8a429c589acd7452a8a356f363356116",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-May-29-2026_11-45-52-9a9e67.log",
+    "source_sha256": "61076ef5efbe97b8737bee8d51740fd4f905363ddc348b9988babdd5528374aa",
+    "published_sha256": "6d9d02ed4f5063ae4c5cb3ca6a3f15cbd95de5f8ec4e85b0872a0d3ed51b76d1",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-May-29-2026_11-52-25-1f4112.log",
+    "source_sha256": "5a0b14086d86f8362f34a3120d3ead7b8a87dd8e4c09ff97a258741be8fced53",
+    "published_sha256": "be692524392e99f87cf7314718da0037141c5a0fe4aa6598501f328706a09d89",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-May-29-2026_12-06-28-c6f7c2.log",
+    "source_sha256": "cf6012840e207a677a7a7b6923d42438279bfbe6797bb22b1d542d54ad9c19df",
+    "published_sha256": "5cdc97c385b51162c8dccaec89302af98c3c5941dce9a53518f27a1694702173",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC-May-29-2026_12-15-18-67e817.log",
+    "source_sha256": "91215d71374907a4d65e83e2a995f685222fb5d7eeca950110e1e3f9bc121aa8",
+    "published_sha256": "58c314c6d913382f4d0df2e6bf71212c3239e5d179e2cf2f43d6bf38be833c72",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC_STEPS-Jun-02-2026_14-51-17-2b4c46.log",
+    "source_sha256": "cfaf00dacc7bd1667105c350212893a8a701f97d41b93b47f4002c36b7bf0b0e",
+    "published_sha256": "a30e6f3b5f74ab11f37aa70bd4245b86349d736d7ae08bd4912afedb99412dac",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  },
+  {
+    "file": "logs/TeaRec/TeaRec-NYC_STEPS-Jun-21-2026_10-54-06-c96965.log",
+    "source_sha256": "7e670a4d3be1792e64f0f5d9fc6d0af40535e4814e8ac5cb3eafb0cf979a4d9a",
+    "published_sha256": "b7968bf2a50e92a8d368bec5c87e9902291e2d51a11c96a2a6f1a567a9dfa65e",
+    "selection": "contains final test result; no traceback/OOM; content-deduplicated"
+  }
+]

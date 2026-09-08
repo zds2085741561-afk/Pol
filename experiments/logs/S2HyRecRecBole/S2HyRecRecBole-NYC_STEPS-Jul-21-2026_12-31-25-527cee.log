@@ -1,0 +1,127 @@
+Tue 21 Jul 2026 12:31:25 INFO  ======================================================================
+Tue 21 Jul 2026 12:31:25 INFO  [Baseline] S2HyRec formal RecBole/EffiPOI comparison
+Tue 21 Jul 2026 12:31:25 INFO  [Dataset] NYC_STEPS | hyperedges=128 | time_slices=4 | alpha=0.5 | ssl=0.001 | device=cuda
+Tue 21 Jul 2026 12:31:25 INFO  [Protocol] Fixed benchmark split + RecBole full-sort HIT/NDCG
+Tue 21 Jul 2026 12:31:25 INFO  [Temporal context] Relative chronological segments are used because the benchmark files contain no absolute timestamps.
+Tue 21 Jul 2026 12:31:25 INFO  ======================================================================
+Tue 21 Jul 2026 12:31:29 INFO  [Training]: train_batch_size = [128] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Tue 21 Jul 2026 12:31:29 INFO  [Evaluation]: eval_batch_size = [256] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Tue 21 Jul 2026 12:31:29 INFO  S2HyRecRecBole(
+  (item_embedding): Embedding(45802, 256, padding_idx=0)
+  (position_embedding): Embedding(50, 256)
+  (trm_encoder): TransformerEncoder(
+    (layer): ModuleList(
+      (0-1): 2 x TransformerLayer(
+        (multi_head_attention): MultiHeadAttention(
+          (query): Linear(in_features=256, out_features=256, bias=True)
+          (key): Linear(in_features=256, out_features=256, bias=True)
+          (value): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.2, inplace=False)
+          (dense): Linear(in_features=256, out_features=256, bias=True)
+          (LayerNorm): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.2, inplace=False)
+        )
+        (feed_forward): FeedForward(
+          (dense_1): Linear(in_features=256, out_features=1024, bias=True)
+          (dense_2): Linear(in_features=1024, out_features=256, bias=True)
+          (LayerNorm): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+      )
+    )
+  )
+  (LayerNorm): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+  (dropout): Dropout(p=0.2, inplace=False)
+  (loss_fct): CrossEntropyLoss()
+  (hyper_mapper): Sequential(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): GELU(approximate='none')
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (temporal_mapper): Sequential(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): GELU(approximate='none')
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (intent_fusion): Sequential(
+    (0): Linear(in_features=512, out_features=256, bias=True)
+    (1): GELU(approximate='none')
+    (2): Dropout(p=0.2, inplace=False)
+    (3): Linear(in_features=256, out_features=256, bias=True)
+  )
+  (intent_norm): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+)
+Trainable parameters: 13811712
+Tue 21 Jul 2026 12:31:29 INFO  Trainable parameters: 13811712
+Tue 21 Jul 2026 12:36:20 INFO  epoch 0 training [time: 287.01s, train loss: 5012.5633]
+Tue 21 Jul 2026 12:36:21 INFO  epoch 0 evaluating [time: 1.25s, valid_score: 0.071900]
+Tue 21 Jul 2026 12:36:21 INFO  valid result: 
+hit@1 : 0.0223    hit@5 : 0.0532    hit@10 : 0.0719    hit@20 : 0.0938    ndcg@1 : 0.0223    ndcg@5 : 0.0381    ndcg@10 : 0.0442    ndcg@20 : 0.0498
+Tue 21 Jul 2026 12:36:22 INFO  Saving current: D:\code\EffiPOI-main\baselines\s2hyrec\saved\S2HyRecRecBole-Jul-21-2026_12-31-29.pth
+Tue 21 Jul 2026 12:41:34 INFO  epoch 1 training [time: 311.87s, train loss: 4222.3987]
+Tue 21 Jul 2026 12:41:35 INFO  epoch 1 evaluating [time: 1.61s, valid_score: 0.128100]
+Tue 21 Jul 2026 12:41:35 INFO  valid result: 
+hit@1 : 0.0437    hit@5 : 0.1069    hit@10 : 0.1281    hit@20 : 0.1519    ndcg@1 : 0.0437    ndcg@5 : 0.0776    ndcg@10 : 0.0845    ndcg@20 : 0.0905
+Tue 21 Jul 2026 12:41:36 INFO  Saving current: D:\code\EffiPOI-main\baselines\s2hyrec\saved\S2HyRecRecBole-Jul-21-2026_12-31-29.pth
+Tue 21 Jul 2026 12:45:47 INFO  epoch 2 training [time: 251.18s, train loss: 3356.0469]
+Tue 21 Jul 2026 12:45:48 INFO  epoch 2 evaluating [time: 1.37s, valid_score: 0.150400]
+Tue 21 Jul 2026 12:45:48 INFO  valid result: 
+hit@1 : 0.0488    hit@5 : 0.1242    hit@10 : 0.1504    hit@20 : 0.1723    ndcg@1 : 0.0488    ndcg@5 : 0.0889    ndcg@10 : 0.0974    ndcg@20 : 0.103
+Tue 21 Jul 2026 12:45:49 INFO  Saving current: D:\code\EffiPOI-main\baselines\s2hyrec\saved\S2HyRecRecBole-Jul-21-2026_12-31-29.pth
+Tue 21 Jul 2026 12:50:09 INFO  epoch 3 training [time: 260.18s, train loss: 2567.2510]
+Tue 21 Jul 2026 12:50:11 INFO  epoch 3 evaluating [time: 1.74s, valid_score: 0.152200]
+Tue 21 Jul 2026 12:50:11 INFO  valid result: 
+hit@1 : 0.0502    hit@5 : 0.1249    hit@10 : 0.1522    hit@20 : 0.1751    ndcg@1 : 0.0502    ndcg@5 : 0.0897    ndcg@10 : 0.0986    ndcg@20 : 0.1045
+Tue 21 Jul 2026 12:50:11 INFO  Saving current: D:\code\EffiPOI-main\baselines\s2hyrec\saved\S2HyRecRecBole-Jul-21-2026_12-31-29.pth
+Tue 21 Jul 2026 12:54:51 INFO  epoch 4 training [time: 280.01s, train loss: 1950.5401]
+Tue 21 Jul 2026 12:54:53 INFO  epoch 4 evaluating [time: 1.40s, valid_score: 0.148500]
+Tue 21 Jul 2026 12:54:53 INFO  valid result: 
+hit@1 : 0.053    hit@5 : 0.1211    hit@10 : 0.1485    hit@20 : 0.1695    ndcg@1 : 0.053    ndcg@5 : 0.0884    ndcg@10 : 0.0973    ndcg@20 : 0.1026
+Tue 21 Jul 2026 12:58:54 INFO  epoch 5 training [time: 241.43s, train loss: 1553.0520]
+Tue 21 Jul 2026 12:58:55 INFO  epoch 5 evaluating [time: 1.35s, valid_score: 0.145400]
+Tue 21 Jul 2026 12:58:55 INFO  valid result: 
+hit@1 : 0.0542    hit@5 : 0.1191    hit@10 : 0.1454    hit@20 : 0.1651    ndcg@1 : 0.0542    ndcg@5 : 0.0877    ndcg@10 : 0.0963    ndcg@20 : 0.1014
+Tue 21 Jul 2026 13:03:47 INFO  epoch 6 training [time: 291.90s, train loss: 1323.8000]
+Tue 21 Jul 2026 13:03:49 INFO  epoch 6 evaluating [time: 1.83s, valid_score: 0.144000]
+Tue 21 Jul 2026 13:03:49 INFO  valid result: 
+hit@1 : 0.0568    hit@5 : 0.1172    hit@10 : 0.144    hit@20 : 0.1647    ndcg@1 : 0.0568    ndcg@5 : 0.0887    ndcg@10 : 0.0974    ndcg@20 : 0.1027
+Tue 21 Jul 2026 13:08:59 INFO  epoch 7 training [time: 310.19s, train loss: 1176.2111]
+Tue 21 Jul 2026 13:09:01 INFO  epoch 7 evaluating [time: 1.44s, valid_score: 0.145500]
+Tue 21 Jul 2026 13:09:01 INFO  valid result: 
+hit@1 : 0.0545    hit@5 : 0.1206    hit@10 : 0.1455    hit@20 : 0.1636    ndcg@1 : 0.0545    ndcg@5 : 0.089    ndcg@10 : 0.0971    ndcg@20 : 0.1016
+Tue 21 Jul 2026 13:14:16 INFO  epoch 8 training [time: 315.65s, train loss: 1084.8870]
+Tue 21 Jul 2026 13:14:18 INFO  epoch 8 evaluating [time: 1.60s, valid_score: 0.138900]
+Tue 21 Jul 2026 13:14:18 INFO  valid result: 
+hit@1 : 0.0541    hit@5 : 0.1133    hit@10 : 0.1389    hit@20 : 0.1635    ndcg@1 : 0.0541    ndcg@5 : 0.085    ndcg@10 : 0.0933    ndcg@20 : 0.0995
+Tue 21 Jul 2026 13:19:12 INFO  epoch 9 training [time: 294.15s, train loss: 1025.3445]
+Tue 21 Jul 2026 13:19:14 INFO  epoch 9 evaluating [time: 1.57s, valid_score: 0.140200]
+Tue 21 Jul 2026 13:19:14 INFO  valid result: 
+hit@1 : 0.0567    hit@5 : 0.1158    hit@10 : 0.1402    hit@20 : 0.1608    ndcg@1 : 0.0567    ndcg@5 : 0.0878    ndcg@10 : 0.0958    ndcg@20 : 0.101
+Tue 21 Jul 2026 13:23:53 INFO  epoch 10 training [time: 279.72s, train loss: 984.0530]
+Tue 21 Jul 2026 13:23:55 INFO  epoch 10 evaluating [time: 1.63s, valid_score: 0.140200]
+Tue 21 Jul 2026 13:23:55 INFO  valid result: 
+hit@1 : 0.055    hit@5 : 0.1142    hit@10 : 0.1402    hit@20 : 0.1601    ndcg@1 : 0.055    ndcg@5 : 0.0859    ndcg@10 : 0.0943    ndcg@20 : 0.0993
+Tue 21 Jul 2026 13:28:51 INFO  epoch 11 training [time: 295.82s, train loss: 952.8587]
+Tue 21 Jul 2026 13:28:52 INFO  epoch 11 evaluating [time: 1.38s, valid_score: 0.137000]
+Tue 21 Jul 2026 13:28:52 INFO  valid result: 
+hit@1 : 0.0552    hit@5 : 0.115    hit@10 : 0.137    hit@20 : 0.156    ndcg@1 : 0.0552    ndcg@5 : 0.0865    ndcg@10 : 0.0937    ndcg@20 : 0.0985
+Tue 21 Jul 2026 13:33:40 INFO  epoch 12 training [time: 287.31s, train loss: 925.5314]
+Tue 21 Jul 2026 13:33:41 INFO  epoch 12 evaluating [time: 1.21s, valid_score: 0.134500]
+Tue 21 Jul 2026 13:33:41 INFO  valid result: 
+hit@1 : 0.0538    hit@5 : 0.1105    hit@10 : 0.1345    hit@20 : 0.1541    ndcg@1 : 0.0538    ndcg@5 : 0.0835    ndcg@10 : 0.0913    ndcg@20 : 0.0962
+Tue 21 Jul 2026 13:38:17 INFO  epoch 13 training [time: 276.03s, train loss: 906.3133]
+Tue 21 Jul 2026 13:38:18 INFO  epoch 13 evaluating [time: 1.03s, valid_score: 0.135600]
+Tue 21 Jul 2026 13:38:18 INFO  valid result: 
+hit@1 : 0.0563    hit@5 : 0.1134    hit@10 : 0.1356    hit@20 : 0.1554    ndcg@1 : 0.0563    ndcg@5 : 0.086    ndcg@10 : 0.0932    ndcg@20 : 0.0982
+Tue 21 Jul 2026 13:42:57 INFO  epoch 14 training [time: 278.75s, train loss: 886.5978]
+Tue 21 Jul 2026 13:42:58 INFO  epoch 14 evaluating [time: 1.21s, valid_score: 0.132800]
+Tue 21 Jul 2026 13:42:58 INFO  valid result: 
+hit@1 : 0.0565    hit@5 : 0.1144    hit@10 : 0.1328    hit@20 : 0.1538    ndcg@1 : 0.0565    ndcg@5 : 0.0865    ndcg@10 : 0.0924    ndcg@20 : 0.0978
+Tue 21 Jul 2026 13:42:58 INFO  Finished training, best eval result in epoch 3
+Tue 21 Jul 2026 13:42:59 INFO  [Best checkpoint loaded] D:\code\EffiPOI-main\baselines\s2hyrec\saved\S2HyRecRecBole-Jul-21-2026_12-31-29.pth | missing=0, unexpected=0
+Tue 21 Jul 2026 13:43:01 INFO  best valid: OrderedDict([('hit@1', 0.0502), ('hit@5', 0.1249), ('hit@10', 0.1522), ('hit@20', 0.1751), ('ndcg@1', 0.0502), ('ndcg@5', 0.0897), ('ndcg@10', 0.0986), ('ndcg@20', 0.1045)])
+Tue 21 Jul 2026 13:43:01 INFO  test result: OrderedDict([('hit@1', 0.0472), ('hit@5', 0.1267), ('hit@10', 0.153), ('hit@20', 0.1786), ('ndcg@1', 0.0472), ('ndcg@5', 0.0893), ('ndcg@10', 0.0979), ('ndcg@20', 0.1043)])
+Tue 21 Jul 2026 13:43:01 INFO  [Saved] JSON: D:\code\EffiPOI-main\baselines\s2hyrec\results\S2HyRec_NYC_STEPS_result.json

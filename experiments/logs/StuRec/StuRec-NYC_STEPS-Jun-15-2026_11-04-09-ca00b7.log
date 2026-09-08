@@ -1,0 +1,367 @@
+Mon 15 Jun 2026 11:04:11 INFO  [Training]: train_batch_size = [128] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Mon 15 Jun 2026 11:04:11 INFO  [Evaluation]: eval_batch_size = [256] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Mon 15 Jun 2026 11:04:12 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = d:/code/EffiPOI-main/data/NYC_STEPS
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 1000000
+train_batch_size = 128
+learner = adam
+learning_rate = 3e-05
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 4
+clip_grad_norm = None
+weight_decay = 1e-05
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = True
+metrics = ['HIT', 'NDCG']
+topk = [1, 5, 10, 20]
+valid_metric = HIT@10
+valid_metric_bigger = True
+eval_batch_size = 256
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = time_seq
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id_list', 'item_id']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [0,inf)
+item_inter_num_interval = [0,inf)
+alias_of_user_id = None
+alias_of_item_id = ['item_id_list']
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = ['train', 'valid', 'test']
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.SEQUENTIAL
+code_dim = 64
+code_cap = 256
+temperature = 0.07
+n_layers = 2
+n_heads = 2
+hidden_size = 64
+inner_size = 256
+hidden_dropout_prob = 0.3
+attn_dropout_prob = 0.3
+hidden_act = gelu
+layer_norm_eps = 1e-12
+initializer_range = 0.02
+use_item_residual = False
+residual_weight = 0.0
+use_multi_interest = False
+num_interests = 1
+use_graph_feature = False
+use_graph_logit = False
+graph_logit_alpha = 0.0
+graph_logit_scale = 80.0
+use_local_rerank = False
+local_rerank_topk = 100
+local_graph_beta = 0.0
+local_graph_2hop_ratio = 0.0
+local_repeat_beta = 0.0
+local_interest_beta = 0.0
+flow_inner_weight = 0.2
+flow_target_weight = 1.0
+flow_smoothing = 1e-08
+flow_topk = 500
+use_2hop_flow = True
+flow_2hop_weight = 0.1
+graph_alpha = 0.02
+graph_score_clip = 3.0
+use_flow_in_train = False
+target_aware_graph_pooling = False
+distill_loss_weight = 1.0
+distill_temperature = 3.0
+distill_topk = 100
+rank_loss_weight = 0.0
+rank_topk = 30
+rank_margin = 0.05
+graph_rank_loss_weight = 0.0
+graph_rank_topk = 10
+mse_loss_weight = 0.0
+contrastive_loss_weight = 0.0
+teacher_hidden_size = 300
+single_spec = True
+ddp = False
+unisrec_transform = None
+dataset_class = StuRecDataset
+self_rank_topk = 30
+hard_neg_topk = 100
+hard_neg_num = 10
+graph_hard_neg_topk = 50
+train_stage = transductive_ft
+rebuild_gtf = False
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+device = cuda
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+plm_size = 1664
+
+
+Mon 15 Jun 2026 11:04:12 INFO  Running strict AS1: formal AT1 GTF teacher -> original PQKD student, KD-only.
+Mon 15 Jun 2026 11:04:13 INFO  [AS1] Formal AT1 graph attached to teacher only. feature_shape=(45802, 1664), sparse_logit=True
+Mon 15 Jun 2026 11:04:15 INFO  Teacher loaded. matched=95, skipped=0, missing=0, unexpected=0
+Mon 15 Jun 2026 11:04:15 INFO  Preserved formal AT1 runtime graph buffers: ['graph_matrix', 'graph_indices', 'graph_values']
+Mon 15 Jun 2026 11:06:09 INFO  epoch 0 training [time: 112.39s, train loss: 2.6187]
+Mon 15 Jun 2026 11:06:10 INFO  epoch 0 evaluating [time: 0.76s, valid_score: 0.000000]
+Mon 15 Jun 2026 11:06:10 INFO  valid result: 
+hit@1 : 0.0    hit@5 : 0.0    hit@10 : 0.0    hit@20 : 0.0    ndcg@1 : 0.0    ndcg@5 : 0.0    ndcg@10 : 0.0    ndcg@20 : 0.0
+Mon 15 Jun 2026 11:06:10 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:08:00 INFO  epoch 1 training [time: 110.12s, train loss: 1.6628]
+Mon 15 Jun 2026 11:08:01 INFO  epoch 1 evaluating [time: 0.77s, valid_score: 0.000200]
+Mon 15 Jun 2026 11:08:01 INFO  valid result: 
+hit@1 : 0.0    hit@5 : 0.0002    hit@10 : 0.0002    hit@20 : 0.0005    ndcg@1 : 0.0    ndcg@5 : 0.0001    ndcg@10 : 0.0001    ndcg@20 : 0.0002
+Mon 15 Jun 2026 11:08:01 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:09:52 INFO  epoch 2 training [time: 110.76s, train loss: 1.5771]
+Mon 15 Jun 2026 11:09:53 INFO  epoch 2 evaluating [time: 0.77s, valid_score: 0.000700]
+Mon 15 Jun 2026 11:09:53 INFO  valid result: 
+hit@1 : 0.0002    hit@5 : 0.0004    hit@10 : 0.0007    hit@20 : 0.0009    ndcg@1 : 0.0002    ndcg@5 : 0.0003    ndcg@10 : 0.0004    ndcg@20 : 0.0004
+Mon 15 Jun 2026 11:09:53 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:11:43 INFO  epoch 3 training [time: 110.20s, train loss: 1.5449]
+Mon 15 Jun 2026 11:11:44 INFO  epoch 3 evaluating [time: 0.78s, valid_score: 0.000700]
+Mon 15 Jun 2026 11:11:44 INFO  valid result: 
+hit@1 : 0.0002    hit@5 : 0.0005    hit@10 : 0.0007    hit@20 : 0.0015    ndcg@1 : 0.0002    ndcg@5 : 0.0004    ndcg@10 : 0.0004    ndcg@20 : 0.0006
+Mon 15 Jun 2026 11:11:44 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:13:36 INFO  epoch 4 training [time: 111.75s, train loss: 1.5269]
+Mon 15 Jun 2026 11:13:36 INFO  epoch 4 evaluating [time: 0.78s, valid_score: 0.000900]
+Mon 15 Jun 2026 11:13:36 INFO  valid result: 
+hit@1 : 0.0002    hit@5 : 0.0003    hit@10 : 0.0009    hit@20 : 0.0014    ndcg@1 : 0.0002    ndcg@5 : 0.0003    ndcg@10 : 0.0004    ndcg@20 : 0.0006
+Mon 15 Jun 2026 11:13:37 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:15:29 INFO  epoch 5 training [time: 112.75s, train loss: 1.5157]
+Mon 15 Jun 2026 11:15:30 INFO  epoch 5 evaluating [time: 0.80s, valid_score: 0.001000]
+Mon 15 Jun 2026 11:15:30 INFO  valid result: 
+hit@1 : 0.0    hit@5 : 0.0003    hit@10 : 0.001    hit@20 : 0.0016    ndcg@1 : 0.0    ndcg@5 : 0.0002    ndcg@10 : 0.0004    ndcg@20 : 0.0006
+Mon 15 Jun 2026 11:15:30 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:17:20 INFO  epoch 6 training [time: 110.11s, train loss: 1.5066]
+Mon 15 Jun 2026 11:17:21 INFO  epoch 6 evaluating [time: 0.78s, valid_score: 0.000700]
+Mon 15 Jun 2026 11:17:21 INFO  valid result: 
+hit@1 : 0.0    hit@5 : 0.0004    hit@10 : 0.0007    hit@20 : 0.002    ndcg@1 : 0.0    ndcg@5 : 0.0002    ndcg@10 : 0.0003    ndcg@20 : 0.0006
+Mon 15 Jun 2026 11:19:11 INFO  epoch 7 training [time: 110.31s, train loss: 1.4992]
+Mon 15 Jun 2026 11:19:12 INFO  epoch 7 evaluating [time: 0.80s, valid_score: 0.001000]
+Mon 15 Jun 2026 11:19:12 INFO  valid result: 
+hit@1 : 0.0    hit@5 : 0.0004    hit@10 : 0.001    hit@20 : 0.0015    ndcg@1 : 0.0    ndcg@5 : 0.0002    ndcg@10 : 0.0004    ndcg@20 : 0.0006
+Mon 15 Jun 2026 11:19:12 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:21:02 INFO  epoch 8 training [time: 110.08s, train loss: 1.4923]
+Mon 15 Jun 2026 11:21:03 INFO  epoch 8 evaluating [time: 0.80s, valid_score: 0.001500]
+Mon 15 Jun 2026 11:21:03 INFO  valid result: 
+hit@1 : 0.0002    hit@5 : 0.0009    hit@10 : 0.0015    hit@20 : 0.0022    ndcg@1 : 0.0002    ndcg@5 : 0.0005    ndcg@10 : 0.0008    ndcg@20 : 0.0009
+Mon 15 Jun 2026 11:21:03 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:22:53 INFO  epoch 9 training [time: 109.89s, train loss: 1.4849]
+Mon 15 Jun 2026 11:22:54 INFO  epoch 9 evaluating [time: 0.78s, valid_score: 0.001600]
+Mon 15 Jun 2026 11:22:54 INFO  valid result: 
+hit@1 : 0.0002    hit@5 : 0.001    hit@10 : 0.0016    hit@20 : 0.0028    ndcg@1 : 0.0002    ndcg@5 : 0.0006    ndcg@10 : 0.0008    ndcg@20 : 0.0011
+Mon 15 Jun 2026 11:22:54 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:24:44 INFO  epoch 10 training [time: 110.18s, train loss: 1.4755]
+Mon 15 Jun 2026 11:24:45 INFO  epoch 10 evaluating [time: 0.80s, valid_score: 0.002400]
+Mon 15 Jun 2026 11:24:45 INFO  valid result: 
+hit@1 : 0.0003    hit@5 : 0.0012    hit@10 : 0.0024    hit@20 : 0.0036    ndcg@1 : 0.0003    ndcg@5 : 0.0008    ndcg@10 : 0.0012    ndcg@20 : 0.0015
+Mon 15 Jun 2026 11:24:45 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:26:35 INFO  epoch 11 training [time: 110.33s, train loss: 1.4550]
+Mon 15 Jun 2026 11:26:36 INFO  epoch 11 evaluating [time: 0.89s, valid_score: 0.004900]
+Mon 15 Jun 2026 11:26:36 INFO  valid result: 
+hit@1 : 0.001    hit@5 : 0.0034    hit@10 : 0.0049    hit@20 : 0.0066    ndcg@1 : 0.001    ndcg@5 : 0.0022    ndcg@10 : 0.0027    ndcg@20 : 0.0031
+Mon 15 Jun 2026 11:26:36 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:28:27 INFO  epoch 12 training [time: 111.00s, train loss: 1.4189]
+Mon 15 Jun 2026 11:28:28 INFO  epoch 12 evaluating [time: 0.81s, valid_score: 0.011500]
+Mon 15 Jun 2026 11:28:28 INFO  valid result: 
+hit@1 : 0.004    hit@5 : 0.0088    hit@10 : 0.0115    hit@20 : 0.0153    ndcg@1 : 0.004    ndcg@5 : 0.0066    ndcg@10 : 0.0075    ndcg@20 : 0.0084
+Mon 15 Jun 2026 11:28:28 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:30:19 INFO  epoch 13 training [time: 110.44s, train loss: 1.3736]
+Mon 15 Jun 2026 11:30:19 INFO  epoch 13 evaluating [time: 0.79s, valid_score: 0.021900]
+Mon 15 Jun 2026 11:30:19 INFO  valid result: 
+hit@1 : 0.0076    hit@5 : 0.0167    hit@10 : 0.0219    hit@20 : 0.0272    ndcg@1 : 0.0076    ndcg@5 : 0.0125    ndcg@10 : 0.0142    ndcg@20 : 0.0155
+Mon 15 Jun 2026 11:30:19 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:32:10 INFO  epoch 14 training [time: 110.45s, train loss: 1.3093]
+Mon 15 Jun 2026 11:32:11 INFO  epoch 14 evaluating [time: 0.79s, valid_score: 0.037000]
+Mon 15 Jun 2026 11:32:11 INFO  valid result: 
+hit@1 : 0.0098    hit@5 : 0.0302    hit@10 : 0.037    hit@20 : 0.0429    ndcg@1 : 0.0098    ndcg@5 : 0.0202    ndcg@10 : 0.0224    ndcg@20 : 0.0239
+Mon 15 Jun 2026 11:32:11 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:34:02 INFO  epoch 15 training [time: 111.41s, train loss: 1.2571]
+Mon 15 Jun 2026 11:34:03 INFO  epoch 15 evaluating [time: 0.80s, valid_score: 0.044400]
+Mon 15 Jun 2026 11:34:03 INFO  valid result: 
+hit@1 : 0.0148    hit@5 : 0.0377    hit@10 : 0.0444    hit@20 : 0.0517    ndcg@1 : 0.0148    ndcg@5 : 0.0264    ndcg@10 : 0.0286    ndcg@20 : 0.0304
+Mon 15 Jun 2026 11:34:03 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:35:54 INFO  epoch 16 training [time: 110.78s, train loss: 1.2135]
+Mon 15 Jun 2026 11:35:55 INFO  epoch 16 evaluating [time: 0.79s, valid_score: 0.055700]
+Mon 15 Jun 2026 11:35:55 INFO  valid result: 
+hit@1 : 0.0173    hit@5 : 0.0454    hit@10 : 0.0557    hit@20 : 0.0628    ndcg@1 : 0.0173    ndcg@5 : 0.0318    ndcg@10 : 0.0352    ndcg@20 : 0.037
+Mon 15 Jun 2026 11:35:55 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:37:45 INFO  epoch 17 training [time: 110.52s, train loss: 1.1801]
+Mon 15 Jun 2026 11:37:46 INFO  epoch 17 evaluating [time: 0.80s, valid_score: 0.059200]
+Mon 15 Jun 2026 11:37:46 INFO  valid result: 
+hit@1 : 0.0188    hit@5 : 0.0498    hit@10 : 0.0592    hit@20 : 0.0673    ndcg@1 : 0.0188    ndcg@5 : 0.0348    ndcg@10 : 0.0378    ndcg@20 : 0.0399
+Mon 15 Jun 2026 11:37:46 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:39:37 INFO  epoch 18 training [time: 111.33s, train loss: 1.1520]
+Mon 15 Jun 2026 11:39:38 INFO  epoch 18 evaluating [time: 0.80s, valid_score: 0.063000]
+Mon 15 Jun 2026 11:39:38 INFO  valid result: 
+hit@1 : 0.0211    hit@5 : 0.0525    hit@10 : 0.063    hit@20 : 0.0724    ndcg@1 : 0.0211    ndcg@5 : 0.0374    ndcg@10 : 0.0409    ndcg@20 : 0.0432
+Mon 15 Jun 2026 11:39:38 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:41:29 INFO  epoch 19 training [time: 110.90s, train loss: 1.1282]
+Mon 15 Jun 2026 11:41:30 INFO  epoch 19 evaluating [time: 0.77s, valid_score: 0.067400]
+Mon 15 Jun 2026 11:41:30 INFO  valid result: 
+hit@1 : 0.0226    hit@5 : 0.0568    hit@10 : 0.0674    hit@20 : 0.0756    ndcg@1 : 0.0226    ndcg@5 : 0.0405    ndcg@10 : 0.0439    ndcg@20 : 0.046
+Mon 15 Jun 2026 11:41:30 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:43:23 INFO  epoch 20 training [time: 112.86s, train loss: 1.1081]
+Mon 15 Jun 2026 11:43:24 INFO  epoch 20 evaluating [time: 0.82s, valid_score: 0.069000]
+Mon 15 Jun 2026 11:43:24 INFO  valid result: 
+hit@1 : 0.0233    hit@5 : 0.0583    hit@10 : 0.069    hit@20 : 0.0786    ndcg@1 : 0.0233    ndcg@5 : 0.0416    ndcg@10 : 0.0451    ndcg@20 : 0.0475
+Mon 15 Jun 2026 11:43:24 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:45:15 INFO  epoch 21 training [time: 111.00s, train loss: 1.0906]
+Mon 15 Jun 2026 11:45:15 INFO  epoch 21 evaluating [time: 0.76s, valid_score: 0.072300]
+Mon 15 Jun 2026 11:45:15 INFO  valid result: 
+hit@1 : 0.0248    hit@5 : 0.0608    hit@10 : 0.0723    hit@20 : 0.0813    ndcg@1 : 0.0248    ndcg@5 : 0.0436    ndcg@10 : 0.0473    ndcg@20 : 0.0496
+Mon 15 Jun 2026 11:45:15 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:47:06 INFO  epoch 22 training [time: 110.69s, train loss: 1.0740]
+Mon 15 Jun 2026 11:47:07 INFO  epoch 22 evaluating [time: 0.77s, valid_score: 0.073600]
+Mon 15 Jun 2026 11:47:07 INFO  valid result: 
+hit@1 : 0.0259    hit@5 : 0.062    hit@10 : 0.0736    hit@20 : 0.0834    ndcg@1 : 0.0259    ndcg@5 : 0.0448    ndcg@10 : 0.0486    ndcg@20 : 0.0511
+Mon 15 Jun 2026 11:47:07 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:48:59 INFO  epoch 23 training [time: 111.63s, train loss: 1.0599]
+Mon 15 Jun 2026 11:48:59 INFO  epoch 23 evaluating [time: 0.81s, valid_score: 0.075400]
+Mon 15 Jun 2026 11:48:59 INFO  valid result: 
+hit@1 : 0.0265    hit@5 : 0.0632    hit@10 : 0.0754    hit@20 : 0.085    ndcg@1 : 0.0265    ndcg@5 : 0.0459    ndcg@10 : 0.0498    ndcg@20 : 0.0522
+Mon 15 Jun 2026 11:49:00 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:50:54 INFO  epoch 24 training [time: 114.96s, train loss: 1.0458]
+Mon 15 Jun 2026 11:50:55 INFO  epoch 24 evaluating [time: 0.72s, valid_score: 0.077000]
+Mon 15 Jun 2026 11:50:55 INFO  valid result: 
+hit@1 : 0.0274    hit@5 : 0.0645    hit@10 : 0.077    hit@20 : 0.0865    ndcg@1 : 0.0274    ndcg@5 : 0.047    ndcg@10 : 0.0511    ndcg@20 : 0.0535
+Mon 15 Jun 2026 11:50:55 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:52:48 INFO  epoch 25 training [time: 112.42s, train loss: 1.0348]
+Mon 15 Jun 2026 11:52:48 INFO  epoch 25 evaluating [time: 0.77s, valid_score: 0.078700]
+Mon 15 Jun 2026 11:52:48 INFO  valid result: 
+hit@1 : 0.0286    hit@5 : 0.0658    hit@10 : 0.0787    hit@20 : 0.0883    ndcg@1 : 0.0286    ndcg@5 : 0.0482    ndcg@10 : 0.0524    ndcg@20 : 0.0548
+Mon 15 Jun 2026 11:52:49 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:54:39 INFO  epoch 26 training [time: 110.42s, train loss: 1.0247]
+Mon 15 Jun 2026 11:54:40 INFO  epoch 26 evaluating [time: 0.78s, valid_score: 0.078800]
+Mon 15 Jun 2026 11:54:40 INFO  valid result: 
+hit@1 : 0.0281    hit@5 : 0.0668    hit@10 : 0.0788    hit@20 : 0.0895    ndcg@1 : 0.0281    ndcg@5 : 0.0486    ndcg@10 : 0.0525    ndcg@20 : 0.0552
+Mon 15 Jun 2026 11:54:40 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:56:31 INFO  epoch 27 training [time: 111.05s, train loss: 1.0155]
+Mon 15 Jun 2026 11:56:32 INFO  epoch 27 evaluating [time: 0.77s, valid_score: 0.079400]
+Mon 15 Jun 2026 11:56:32 INFO  valid result: 
+hit@1 : 0.0291    hit@5 : 0.0681    hit@10 : 0.0794    hit@20 : 0.0901    ndcg@1 : 0.0291    ndcg@5 : 0.0499    ndcg@10 : 0.0536    ndcg@20 : 0.0563
+Mon 15 Jun 2026 11:56:32 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 11:58:22 INFO  epoch 28 training [time: 110.30s, train loss: 1.0055]
+Mon 15 Jun 2026 11:58:23 INFO  epoch 28 evaluating [time: 0.77s, valid_score: 0.080900]
+Mon 15 Jun 2026 11:58:23 INFO  valid result: 
+hit@1 : 0.0289    hit@5 : 0.0684    hit@10 : 0.0809    hit@20 : 0.0917    ndcg@1 : 0.0289    ndcg@5 : 0.0499    ndcg@10 : 0.054    ndcg@20 : 0.0567
+Mon 15 Jun 2026 11:58:23 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:00:14 INFO  epoch 29 training [time: 111.27s, train loss: 0.9946]
+Mon 15 Jun 2026 12:00:15 INFO  epoch 29 evaluating [time: 0.76s, valid_score: 0.081800]
+Mon 15 Jun 2026 12:00:15 INFO  valid result: 
+hit@1 : 0.0309    hit@5 : 0.0708    hit@10 : 0.0818    hit@20 : 0.0914    ndcg@1 : 0.0309    ndcg@5 : 0.052    ndcg@10 : 0.0555    ndcg@20 : 0.058
+Mon 15 Jun 2026 12:00:15 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:02:12 INFO  epoch 30 training [time: 117.36s, train loss: 0.9865]
+Mon 15 Jun 2026 12:02:13 INFO  epoch 30 evaluating [time: 0.89s, valid_score: 0.084300]
+Mon 15 Jun 2026 12:02:13 INFO  valid result: 
+hit@1 : 0.0309    hit@5 : 0.0715    hit@10 : 0.0843    hit@20 : 0.0939    ndcg@1 : 0.0309    ndcg@5 : 0.0525    ndcg@10 : 0.0567    ndcg@20 : 0.0591
+Mon 15 Jun 2026 12:02:13 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:04:10 INFO  epoch 31 training [time: 116.94s, train loss: 0.9794]
+Mon 15 Jun 2026 12:04:11 INFO  epoch 31 evaluating [time: 0.83s, valid_score: 0.084400]
+Mon 15 Jun 2026 12:04:11 INFO  valid result: 
+hit@1 : 0.031    hit@5 : 0.0714    hit@10 : 0.0844    hit@20 : 0.0929    ndcg@1 : 0.031    ndcg@5 : 0.0525    ndcg@10 : 0.0568    ndcg@20 : 0.0589
+Mon 15 Jun 2026 12:04:11 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:06:06 INFO  epoch 32 training [time: 114.42s, train loss: 0.9725]
+Mon 15 Jun 2026 12:06:06 INFO  epoch 32 evaluating [time: 0.74s, valid_score: 0.085600]
+Mon 15 Jun 2026 12:06:06 INFO  valid result: 
+hit@1 : 0.0317    hit@5 : 0.0746    hit@10 : 0.0856    hit@20 : 0.0964    ndcg@1 : 0.0317    ndcg@5 : 0.0547    ndcg@10 : 0.0583    ndcg@20 : 0.061
+Mon 15 Jun 2026 12:06:06 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:08:01 INFO  epoch 33 training [time: 114.49s, train loss: 0.9665]
+Mon 15 Jun 2026 12:08:02 INFO  epoch 33 evaluating [time: 0.74s, valid_score: 0.086000]
+Mon 15 Jun 2026 12:08:02 INFO  valid result: 
+hit@1 : 0.0322    hit@5 : 0.0739    hit@10 : 0.086    hit@20 : 0.0958    ndcg@1 : 0.0322    ndcg@5 : 0.0545    ndcg@10 : 0.0585    ndcg@20 : 0.061
+Mon 15 Jun 2026 12:08:02 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:09:55 INFO  epoch 34 training [time: 113.72s, train loss: 0.9603]
+Mon 15 Jun 2026 12:09:56 INFO  epoch 34 evaluating [time: 0.74s, valid_score: 0.086200]
+Mon 15 Jun 2026 12:09:56 INFO  valid result: 
+hit@1 : 0.0324    hit@5 : 0.0734    hit@10 : 0.0862    hit@20 : 0.095    ndcg@1 : 0.0324    ndcg@5 : 0.0543    ndcg@10 : 0.0584    ndcg@20 : 0.0606
+Mon 15 Jun 2026 12:09:56 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:11:52 INFO  epoch 35 training [time: 115.59s, train loss: 0.9556]
+Mon 15 Jun 2026 12:11:53 INFO  epoch 35 evaluating [time: 0.77s, valid_score: 0.085600]
+Mon 15 Jun 2026 12:11:53 INFO  valid result: 
+hit@1 : 0.0337    hit@5 : 0.0734    hit@10 : 0.0856    hit@20 : 0.0954    ndcg@1 : 0.0337    ndcg@5 : 0.055    ndcg@10 : 0.0589    ndcg@20 : 0.0614
+Mon 15 Jun 2026 12:13:45 INFO  epoch 36 training [time: 112.64s, train loss: 0.9513]
+Mon 15 Jun 2026 12:13:46 INFO  epoch 36 evaluating [time: 0.77s, valid_score: 0.087000]
+Mon 15 Jun 2026 12:13:46 INFO  valid result: 
+hit@1 : 0.033    hit@5 : 0.0749    hit@10 : 0.087    hit@20 : 0.0963    ndcg@1 : 0.033    ndcg@5 : 0.0553    ndcg@10 : 0.0593    ndcg@20 : 0.0616
+Mon 15 Jun 2026 12:13:46 INFO  Saving current: saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:15:38 INFO  epoch 37 training [time: 111.94s, train loss: 0.9465]
+Mon 15 Jun 2026 12:15:39 INFO  epoch 37 evaluating [time: 0.76s, valid_score: 0.085300]
+Mon 15 Jun 2026 12:15:39 INFO  valid result: 
+hit@1 : 0.0332    hit@5 : 0.0748    hit@10 : 0.0853    hit@20 : 0.0944    ndcg@1 : 0.0332    ndcg@5 : 0.0553    ndcg@10 : 0.0588    ndcg@20 : 0.0611
+Mon 15 Jun 2026 12:17:30 INFO  epoch 38 training [time: 110.91s, train loss: 0.9432]
+Mon 15 Jun 2026 12:17:30 INFO  epoch 38 evaluating [time: 0.84s, valid_score: 0.085800]
+Mon 15 Jun 2026 12:17:30 INFO  valid result: 
+hit@1 : 0.0332    hit@5 : 0.0738    hit@10 : 0.0858    hit@20 : 0.0953    ndcg@1 : 0.0332    ndcg@5 : 0.055    ndcg@10 : 0.0589    ndcg@20 : 0.0613
+Mon 15 Jun 2026 12:19:22 INFO  epoch 39 training [time: 111.23s, train loss: 0.9387]
+Mon 15 Jun 2026 12:19:22 INFO  epoch 39 evaluating [time: 0.77s, valid_score: 0.086200]
+Mon 15 Jun 2026 12:19:22 INFO  valid result: 
+hit@1 : 0.0338    hit@5 : 0.0749    hit@10 : 0.0862    hit@20 : 0.0968    ndcg@1 : 0.0338    ndcg@5 : 0.0557    ndcg@10 : 0.0593    ndcg@20 : 0.062
+Mon 15 Jun 2026 12:21:14 INFO  epoch 40 training [time: 111.87s, train loss: 0.9351]
+Mon 15 Jun 2026 12:21:15 INFO  epoch 40 evaluating [time: 0.78s, valid_score: 0.085400]
+Mon 15 Jun 2026 12:21:15 INFO  valid result: 
+hit@1 : 0.0334    hit@5 : 0.0752    hit@10 : 0.0854    hit@20 : 0.0963    ndcg@1 : 0.0334    ndcg@5 : 0.0558    ndcg@10 : 0.0592    ndcg@20 : 0.0619
+Mon 15 Jun 2026 12:23:06 INFO  epoch 41 training [time: 111.12s, train loss: 0.9312]
+Mon 15 Jun 2026 12:23:07 INFO  epoch 41 evaluating [time: 0.78s, valid_score: 0.086300]
+Mon 15 Jun 2026 12:23:07 INFO  valid result: 
+hit@1 : 0.0338    hit@5 : 0.074    hit@10 : 0.0863    hit@20 : 0.0956    ndcg@1 : 0.0338    ndcg@5 : 0.0553    ndcg@10 : 0.0592    ndcg@20 : 0.0616
+Mon 15 Jun 2026 12:23:07 INFO  Finished training, best eval result in epoch 36
+Mon 15 Jun 2026 12:23:07 INFO  Loading model structure and parameters from saved\StuRec-Jun-15-2026_11-04-15.pth
+Mon 15 Jun 2026 12:23:09 INFO  best valid : OrderedDict([('hit@1', 0.033), ('hit@5', 0.0749), ('hit@10', 0.087), ('hit@20', 0.0963), ('ndcg@1', 0.033), ('ndcg@5', 0.0553), ('ndcg@10', 0.0593), ('ndcg@20', 0.0616)])
+Mon 15 Jun 2026 12:23:09 INFO  test result: OrderedDict([('hit@1', 0.032), ('hit@5', 0.0728), ('hit@10', 0.0838), ('hit@20', 0.0922), ('ndcg@1', 0.032), ('ndcg@5', 0.0537), ('ndcg@10', 0.0573), ('ndcg@20', 0.0595)])

@@ -1,0 +1,67 @@
+{
+  "variant": "TCC validation-only joint tuning",
+  "dataset": "NYC",
+  "checkpoint": "saved\\StuRec-Jul-13-2026_12-46-28.pth",
+  "selection_rule": {
+    "constraints": {
+      "hit@10_tolerance": 0.0,
+      "hit@5_tolerance": 0.001
+    },
+    "objective": [
+      "ndcg@10",
+      "ndcg@5",
+      "hit@1",
+      "hit@10"
+    ]
+  },
+  "baseline_validation": {
+    "hit@1": 0.2567,
+    "hit@5": 0.5273,
+    "hit@10": 0.5978,
+    "hit@20": 0.6321,
+    "ndcg@1": 0.2567,
+    "ndcg@5": 0.4032,
+    "ndcg@10": 0.4265,
+    "ndcg@20": 0.4352
+  },
+  "selected": {
+    "rerank_topk": 15,
+    "graph_scale": 60.0,
+    "beta": 0.015,
+    "hit@1": 0.2632,
+    "hit@5": 0.5264,
+    "hit@10": 0.5996,
+    "hit@20": 0.6321,
+    "ndcg@1": 0.2632,
+    "ndcg@5": 0.4051,
+    "ndcg@10": 0.4294,
+    "ndcg@20": 0.4376,
+    "eligible": true
+  },
+  "validation": [
+    {
+      "rerank_topk": 15,
+      "graph_scale": 60.0,
+      "beta": 0.015,
+      "hit@1": 0.2632,
+      "hit@5": 0.5264,
+      "hit@10": 0.5996,
+      "hit@20": 0.6321,
+      "ndcg@1": 0.2632,
+      "ndcg@5": 0.4051,
+      "ndcg@10": 0.4294,
+      "ndcg@20": 0.4376,
+      "eligible": true
+    }
+  ],
+  "test": {
+    "hit@1": 0.2502,
+    "hit@5": 0.5144,
+    "hit@10": 0.5792,
+    "hit@20": 0.6163,
+    "ndcg@1": 0.2502,
+    "ndcg@5": 0.3917,
+    "ndcg@10": 0.4129,
+    "ndcg@20": 0.4223
+  }
+}

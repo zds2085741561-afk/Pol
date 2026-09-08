@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pth
+*.pt
+*.index
+*.feat1CLS
+*.feat2CLS
+*.inter
+*.parquet
+saved/
+log/
+log_tensorboard/
+.env
+.env.*
+.venv/
+data/*/

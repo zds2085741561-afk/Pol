@@ -1,0 +1,103 @@
+# =========================================================
+# E4 Full Student: PQ + residual + GTF + MIC + local rerank
+# Objective: CE + KD + rank + graph-rank + MSE alignment + contrastive
+# =========================================================
+
+# ---------- Original lightweight PQKD student ----------
+code_dim: 64
+code_cap: 256
+temperature: 0.07
+n_layers: 2
+n_heads: 2
+hidden_size: 64
+inner_size: 256
+hidden_dropout_prob: 0.30
+attn_dropout_prob: 0.30
+hidden_act: 'gelu'
+layer_norm_eps: 1e-12
+initializer_range: 0.02
+
+use_item_residual: True
+residual_weight: 0.10
+
+# ---------- E4 Student enhancements ----------
+use_multi_interest: True
+num_interests: 4
+use_graph_feature: True
+use_graph_logit: True
+student_graph_alpha: 0.003
+graph_logit_alpha: 0.003
+graph_logit_scale: 80.0
+use_local_rerank: True
+local_rerank_topk: 20
+local_graph_beta: 0.005
+local_graph_2hop_ratio: 0.0
+local_repeat_beta: 0.005
+local_interest_beta: 0.010
+
+# ---------- E4 Full Teacher GTF ----------
+flow_inner_weight: 0.2
+flow_target_weight: 1.0
+flow_smoothing: 1e-8
+flow_topk: 500
+use_2hop_flow: True
+flow_2hop_weight: 0.10
+graph_alpha: 0.02
+graph_score_clip: 3.0
+use_flow_in_train: False
+target_aware_graph_pooling: False
+
+# ---------- E4 Full Teacher MIC + local MIFG ----------
+teacher_use_multi_interest: True
+teacher_num_interests: 4
+teacher_mic_aggregation: 'max'
+teacher_orth_weight: 0.01
+teacher_use_flow_multi_rerank: True
+teacher_flow_multi_topk: 20
+teacher_flow_multi_beta: 0.015
+teacher_flow_rerank_recent: 1
+teacher_flow_rerank_scale: 100.0
+teacher_flow_rerank_keep: 1
+teacher_flow_rerank_confidence: 0.30
+teacher_flow_rerank_primary_bonus: 0.0
+
+# ---------- E4 Full Student objective ----------
+ce_temperature: 0.10
+ce_loss_weight: 1.0
+distill_loss_weight: 0.08
+distill_temperature: 3.0
+distill_topk: 100
+use_tfkd: False
+tfkd_topk: 100
+tfkd_graph_topk: 30
+use_tfca: False
+tfca_topk: 20
+tfca_gate_bias: -2.0
+tfca_residual_init: 0.0
+use_catf: False
+catf_alpha: 0.0
+catf_uncertainty_topk: 100
+catf_temperature: 1.0
+use_tfpq: False
+tfpq_loss_weight: 0.5
+tfpq_graph_topk: 10
+pure_student: False
+rank_loss_weight: 0.02
+rank_topk: 30
+rank_margin: 0.05
+graph_rank_loss_weight: 0.005
+graph_rank_topk: 10
+mse_loss_weight: 0.02
+contrastive_loss_weight: 0.005
+teacher_hidden_size: 300
+
+# ---------- Training ----------
+epochs: 1000000
+eval_step: 1
+stopping_step: 4
+learning_rate: 0.00003
+weight_decay: 0.00001
+train_batch_size: 128
+eval_batch_size: 256
+seed: 2020
+reproducibility: True

@@ -1,0 +1,17 @@
+{
+  "model": "MIMARRecBole",
+  "dataset": "NYC",
+  "split": "test",
+  "protocol": "RecBole full-sort",
+  "checkpoint": "baselines\\mimar_recbole\\saved\\MIMARRecBole-Jun-28-2026_18-44-49.pth",
+  "test_result": {
+    "hit@1": 0.2614,
+    "hit@5": 0.5088,
+    "hit@10": 0.5765,
+    "hit@20": 0.6265,
+    "ndcg@1": 0.2614,
+    "ndcg@5": 0.3938,
+    "ndcg@10": 0.4154,
+    "ndcg@20": 0.4282
+  }
+}

@@ -1,0 +1,375 @@
+Sun 21 Jun 2026 10:54:06 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = d:/code/EffiPOI-main/data/NYC_STEPS
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 300
+train_batch_size = 128
+learner = adam
+learning_rate = 0.001
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 4
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = True
+metrics = ['HIT', 'NDCG']
+topk = [1, 5, 10, 20]
+valid_metric = HIT@10
+valid_metric_bigger = True
+eval_batch_size = 256
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = time_seq
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id_list', 'item_id']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [0,inf)
+item_inter_num_interval = [0,inf)
+alias_of_user_id = None
+alias_of_item_id = ['item_id_list']
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = ['train', 'valid', 'test']
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.SEQUENTIAL
+n_layers = 4
+n_heads = 4
+hidden_size = 300
+inner_size = 1200
+hidden_dropout_prob = 0.15
+attn_dropout_prob = 0.15
+hidden_act = gelu
+layer_norm_eps = 1e-12
+initializer_range = 0.02
+loss_type = CE
+item_drop_ratio = 0.2
+item_drop_coefficient = 0.9
+lambda = 0.001
+plm_suffix = feat1CLS
+plm_suffix_aug = feat2CLS
+train_stage = transductive_ft
+plm_size = 1664
+adaptor_dropout_prob = 0.1
+adaptor_layers = [1664, 300]
+temperature = 0.07
+n_exps = 4
+sinkhorn_iter = 3
+reassign_steps = 5
+stable_moe = False
+use_graph_feature = True
+flow_inner_weight = 0.2
+flow_target_weight = 1.0
+flow_smoothing = 1e-08
+flow_topk = 500
+use_2hop_flow = True
+flow_2hop_weight = 0.1
+use_graph_logit = True
+graph_alpha = 0.02
+graph_score_clip = 3.0
+use_flow_in_train = False
+target_aware_graph_pooling = False
+use_multi_interest = True
+num_interests = 4
+mic_aggregation = max
+orth_weight = 0.01
+use_flow_multi_rerank = True
+flow_multi_topk = 20
+flow_multi_beta = 0.015
+flow_rerank_recent = 1
+flow_rerank_scale = 100.0
+flow_rerank_keep = 1
+flow_rerank_confidence = 0.3
+flow_rerank_primary_bonus = 0.0
+use_local_rerank = False
+single_spec = True
+ddp = False
+unisrec_transform = None
+dataset_class = TeaRecDataset
+rebuild_gtf = False
+device = cuda
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+Sun 21 Jun 2026 10:54:06 INFO  Running E4 Full Teacher: GTF+MIC+MIFG enabled.
+Sun 21 Jun 2026 10:54:09 INFO  [Training]: train_batch_size = [128] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Sun 21 Jun 2026 10:54:09 INFO  [Evaluation]: eval_batch_size = [256] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Sun 21 Jun 2026 10:54:09 INFO  [E4-FULL-TEACHER] Graph attached. feature_shape=(45802, 1664), sparse_logit=True
+Sun 21 Jun 2026 10:54:11 INFO  Fix encoder parameters. [E4 Full GTF + MIC + MIFG]
+Sun 21 Jun 2026 10:54:11 INFO  TeaRec(
+  (item_embedding): Embedding(45802, 300, padding_idx=0)
+  (position_embedding): Embedding(50, 300)
+  (trm_encoder): TransformerEncoder(
+    (layer): ModuleList(
+      (0-3): 4 x TransformerLayer(
+        (multi_head_attention): MultiHeadAttention(
+          (query): Linear(in_features=300, out_features=300, bias=True)
+          (key): Linear(in_features=300, out_features=300, bias=True)
+          (value): Linear(in_features=300, out_features=300, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.15, inplace=False)
+          (dense): Linear(in_features=300, out_features=300, bias=True)
+          (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.15, inplace=False)
+        )
+        (feed_forward): FeedForward(
+          (dense_1): Linear(in_features=300, out_features=1200, bias=True)
+          (dense_2): Linear(in_features=1200, out_features=300, bias=True)
+          (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.15, inplace=False)
+        )
+      )
+    )
+  )
+  (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+  (dropout): Dropout(p=0.15, inplace=False)
+  (loss_fct): CrossEntropyLoss()
+  (moe_adaptor): MoEAdaptorLayer(
+    (experts): ModuleList(
+      (0-3): 4 x Linear(in_features=1664, out_features=300, bias=True)
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+  (mic_context_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+  (graph_proj): Linear(in_features=1664, out_features=300, bias=True)
+  (interest_attention): Sequential(
+    (0): Linear(in_features=300, out_features=150, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=150, out_features=1, bias=True)
+  )
+  (gating_layer): StableDynamicGating(
+    (gate): Sequential(
+      (0): Linear(in_features=600, out_features=300, bias=True)
+      (1): SiLU()
+      (2): Linear(in_features=300, out_features=1, bias=True)
+      (3): Sigmoid()
+    )
+    (graph_transform): Sequential(
+      (0): Linear(in_features=300, out_features=300, bias=True)
+      (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+      (2): Dropout(p=0.3, inplace=False)
+    )
+    (norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+  )
+)
+Trainable parameters: 16571214
+Sun 21 Jun 2026 10:54:11 INFO  Trainable parameters: 16571214
+Sun 21 Jun 2026 10:58:13 INFO  epoch 0 training [time: 234.07s, train loss: 5051.8505]
+Sun 21 Jun 2026 10:58:17 INFO  epoch 0 evaluating [time: 4.13s, valid_score: 0.099100]
+Sun 21 Jun 2026 10:58:17 INFO  valid result: 
+hit@1 : 0.0262    hit@5 : 0.077    hit@10 : 0.0991    hit@20 : 0.1173    ndcg@1 : 0.0262    ndcg@5 : 0.0532    ndcg@10 : 0.0604    ndcg@20 : 0.065
+Sun 21 Jun 2026 10:58:19 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:02:03 INFO  epoch 1 training [time: 224.06s, train loss: 4361.4927]
+Sun 21 Jun 2026 11:02:07 INFO  epoch 1 evaluating [time: 4.02s, valid_score: 0.112600]
+Sun 21 Jun 2026 11:02:07 INFO  valid result: 
+hit@1 : 0.0458    hit@5 : 0.0927    hit@10 : 0.1126    hit@20 : 0.1318    ndcg@1 : 0.0458    ndcg@5 : 0.0708    ndcg@10 : 0.0773    ndcg@20 : 0.0821
+Sun 21 Jun 2026 11:02:09 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:05:53 INFO  epoch 2 training [time: 224.84s, train loss: 4044.1787]
+Sun 21 Jun 2026 11:05:57 INFO  epoch 2 evaluating [time: 4.01s, valid_score: 0.124200]
+Sun 21 Jun 2026 11:05:57 INFO  valid result: 
+hit@1 : 0.0557    hit@5 : 0.104    hit@10 : 0.1242    hit@20 : 0.1468    ndcg@1 : 0.0557    ndcg@5 : 0.0812    ndcg@10 : 0.0878    ndcg@20 : 0.0934
+Sun 21 Jun 2026 11:05:59 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:09:44 INFO  epoch 3 training [time: 224.92s, train loss: 3828.1595]
+Sun 21 Jun 2026 11:09:48 INFO  epoch 3 evaluating [time: 4.05s, valid_score: 0.134100]
+Sun 21 Jun 2026 11:09:48 INFO  valid result: 
+hit@1 : 0.0612    hit@5 : 0.1126    hit@10 : 0.1341    hit@20 : 0.1563    ndcg@1 : 0.0612    ndcg@5 : 0.088    ndcg@10 : 0.095    ndcg@20 : 0.1006
+Sun 21 Jun 2026 11:09:50 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:13:34 INFO  epoch 4 training [time: 224.50s, train loss: 3662.7566]
+Sun 21 Jun 2026 11:13:38 INFO  epoch 4 evaluating [time: 4.02s, valid_score: 0.140500]
+Sun 21 Jun 2026 11:13:38 INFO  valid result: 
+hit@1 : 0.0648    hit@5 : 0.1165    hit@10 : 0.1405    hit@20 : 0.1628    ndcg@1 : 0.0648    ndcg@5 : 0.0921    ndcg@10 : 0.0999    ndcg@20 : 0.1056
+Sun 21 Jun 2026 11:13:40 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:17:26 INFO  epoch 5 training [time: 225.68s, train loss: 3525.6593]
+Sun 21 Jun 2026 11:17:30 INFO  epoch 5 evaluating [time: 4.06s, valid_score: 0.142700]
+Sun 21 Jun 2026 11:17:30 INFO  valid result: 
+hit@1 : 0.0667    hit@5 : 0.1193    hit@10 : 0.1427    hit@20 : 0.1656    ndcg@1 : 0.0667    ndcg@5 : 0.094    ndcg@10 : 0.1015    ndcg@20 : 0.1073
+Sun 21 Jun 2026 11:17:31 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:21:16 INFO  epoch 6 training [time: 225.04s, train loss: 3405.6246]
+Sun 21 Jun 2026 11:21:20 INFO  epoch 6 evaluating [time: 4.02s, valid_score: 0.148600]
+Sun 21 Jun 2026 11:21:20 INFO  valid result: 
+hit@1 : 0.0673    hit@5 : 0.1242    hit@10 : 0.1486    hit@20 : 0.1728    ndcg@1 : 0.0673    ndcg@5 : 0.0973    ndcg@10 : 0.1052    ndcg@20 : 0.1113
+Sun 21 Jun 2026 11:21:22 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:25:07 INFO  epoch 7 training [time: 225.21s, train loss: 3295.3809]
+Sun 21 Jun 2026 11:25:11 INFO  epoch 7 evaluating [time: 4.03s, valid_score: 0.152300]
+Sun 21 Jun 2026 11:25:11 INFO  valid result: 
+hit@1 : 0.0702    hit@5 : 0.1266    hit@10 : 0.1523    hit@20 : 0.1766    ndcg@1 : 0.0702    ndcg@5 : 0.0996    ndcg@10 : 0.108    ndcg@20 : 0.1141
+Sun 21 Jun 2026 11:25:13 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:28:58 INFO  epoch 8 training [time: 225.09s, train loss: 3195.0989]
+Sun 21 Jun 2026 11:29:02 INFO  epoch 8 evaluating [time: 4.04s, valid_score: 0.156500]
+Sun 21 Jun 2026 11:29:02 INFO  valid result: 
+hit@1 : 0.0696    hit@5 : 0.1292    hit@10 : 0.1565    hit@20 : 0.1824    ndcg@1 : 0.0696    ndcg@5 : 0.1006    ndcg@10 : 0.1095    ndcg@20 : 0.116
+Sun 21 Jun 2026 11:29:03 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:32:48 INFO  epoch 9 training [time: 224.75s, train loss: 3099.8418]
+Sun 21 Jun 2026 11:32:52 INFO  epoch 9 evaluating [time: 4.03s, valid_score: 0.158000]
+Sun 21 Jun 2026 11:32:52 INFO  valid result: 
+hit@1 : 0.0687    hit@5 : 0.1305    hit@10 : 0.158    hit@20 : 0.1839    ndcg@1 : 0.0687    ndcg@5 : 0.101    ndcg@10 : 0.1099    ndcg@20 : 0.1165
+Sun 21 Jun 2026 11:32:54 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:36:39 INFO  epoch 10 training [time: 225.09s, train loss: 3013.4987]
+Sun 21 Jun 2026 11:36:43 INFO  epoch 10 evaluating [time: 4.02s, valid_score: 0.160900]
+Sun 21 Jun 2026 11:36:43 INFO  valid result: 
+hit@1 : 0.07    hit@5 : 0.1333    hit@10 : 0.1609    hit@20 : 0.1855    ndcg@1 : 0.07    ndcg@5 : 0.1028    ndcg@10 : 0.1117    ndcg@20 : 0.118
+Sun 21 Jun 2026 11:36:45 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:40:32 INFO  epoch 11 training [time: 227.88s, train loss: 2927.8141]
+Sun 21 Jun 2026 11:40:36 INFO  epoch 11 evaluating [time: 3.97s, valid_score: 0.161300]
+Sun 21 Jun 2026 11:40:36 INFO  valid result: 
+hit@1 : 0.0702    hit@5 : 0.1347    hit@10 : 0.1613    hit@20 : 0.1873    ndcg@1 : 0.0702    ndcg@5 : 0.1034    ndcg@10 : 0.112    ndcg@20 : 0.1186
+Sun 21 Jun 2026 11:40:38 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:44:24 INFO  epoch 12 training [time: 225.95s, train loss: 2850.0312]
+Sun 21 Jun 2026 11:44:28 INFO  epoch 12 evaluating [time: 3.98s, valid_score: 0.163300]
+Sun 21 Jun 2026 11:44:28 INFO  valid result: 
+hit@1 : 0.0701    hit@5 : 0.1353    hit@10 : 0.1633    hit@20 : 0.1895    ndcg@1 : 0.0701    ndcg@5 : 0.1038    ndcg@10 : 0.1129    ndcg@20 : 0.1195
+Sun 21 Jun 2026 11:44:29 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:48:15 INFO  epoch 13 training [time: 225.91s, train loss: 2776.8165]
+Sun 21 Jun 2026 11:48:19 INFO  epoch 13 evaluating [time: 3.97s, valid_score: 0.165600]
+Sun 21 Jun 2026 11:48:19 INFO  valid result: 
+hit@1 : 0.0709    hit@5 : 0.135    hit@10 : 0.1656    hit@20 : 0.1905    ndcg@1 : 0.0709    ndcg@5 : 0.1042    ndcg@10 : 0.1141    ndcg@20 : 0.1204
+Sun 21 Jun 2026 11:48:21 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:52:07 INFO  epoch 14 training [time: 226.22s, train loss: 2705.6498]
+Sun 21 Jun 2026 11:52:11 INFO  epoch 14 evaluating [time: 4.04s, valid_score: 0.165600]
+Sun 21 Jun 2026 11:52:11 INFO  valid result: 
+hit@1 : 0.0707    hit@5 : 0.1367    hit@10 : 0.1656    hit@20 : 0.1912    ndcg@1 : 0.0707    ndcg@5 : 0.1048    ndcg@10 : 0.1142    ndcg@20 : 0.1207
+Sun 21 Jun 2026 11:52:13 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 11:55:59 INFO  epoch 15 training [time: 226.40s, train loss: 2638.3256]
+Sun 21 Jun 2026 11:56:03 INFO  epoch 15 evaluating [time: 3.99s, valid_score: 0.166800]
+Sun 21 Jun 2026 11:56:03 INFO  valid result: 
+hit@1 : 0.0713    hit@5 : 0.1365    hit@10 : 0.1668    hit@20 : 0.1918    ndcg@1 : 0.0713    ndcg@5 : 0.1049    ndcg@10 : 0.1148    ndcg@20 : 0.1211
+Sun 21 Jun 2026 11:56:05 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:00:02 INFO  epoch 16 training [time: 237.14s, train loss: 2575.0058]
+Sun 21 Jun 2026 12:00:06 INFO  epoch 16 evaluating [time: 3.99s, valid_score: 0.167300]
+Sun 21 Jun 2026 12:00:06 INFO  valid result: 
+hit@1 : 0.0709    hit@5 : 0.1375    hit@10 : 0.1673    hit@20 : 0.1929    ndcg@1 : 0.0709    ndcg@5 : 0.1054    ndcg@10 : 0.1152    ndcg@20 : 0.1216
+Sun 21 Jun 2026 12:00:07 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:04:12 INFO  epoch 17 training [time: 245.00s, train loss: 2515.1086]
+Sun 21 Jun 2026 12:04:16 INFO  epoch 17 evaluating [time: 4.15s, valid_score: 0.167400]
+Sun 21 Jun 2026 12:04:16 INFO  valid result: 
+hit@1 : 0.0717    hit@5 : 0.1366    hit@10 : 0.1674    hit@20 : 0.1913    ndcg@1 : 0.0717    ndcg@5 : 0.1056    ndcg@10 : 0.1157    ndcg@20 : 0.1218
+Sun 21 Jun 2026 12:04:18 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:08:23 INFO  epoch 18 training [time: 245.22s, train loss: 2456.3334]
+Sun 21 Jun 2026 12:08:27 INFO  epoch 18 evaluating [time: 4.01s, valid_score: 0.169300]
+Sun 21 Jun 2026 12:08:27 INFO  valid result: 
+hit@1 : 0.0719    hit@5 : 0.137    hit@10 : 0.1693    hit@20 : 0.1947    ndcg@1 : 0.0719    ndcg@5 : 0.1057    ndcg@10 : 0.1162    ndcg@20 : 0.1227
+Sun 21 Jun 2026 12:08:29 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:12:24 INFO  epoch 19 training [time: 234.90s, train loss: 2401.8742]
+Sun 21 Jun 2026 12:12:28 INFO  epoch 19 evaluating [time: 3.92s, valid_score: 0.168300]
+Sun 21 Jun 2026 12:12:28 INFO  valid result: 
+hit@1 : 0.0713    hit@5 : 0.1378    hit@10 : 0.1683    hit@20 : 0.1947    ndcg@1 : 0.0713    ndcg@5 : 0.1055    ndcg@10 : 0.1155    ndcg@20 : 0.1222
+Sun 21 Jun 2026 12:16:29 INFO  epoch 20 training [time: 241.26s, train loss: 2347.8715]
+Sun 21 Jun 2026 12:16:33 INFO  epoch 20 evaluating [time: 4.00s, valid_score: 0.169600]
+Sun 21 Jun 2026 12:16:33 INFO  valid result: 
+hit@1 : 0.0715    hit@5 : 0.1366    hit@10 : 0.1696    hit@20 : 0.195    ndcg@1 : 0.0715    ndcg@5 : 0.1053    ndcg@10 : 0.116    ndcg@20 : 0.1225
+Sun 21 Jun 2026 12:16:35 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:20:34 INFO  epoch 21 training [time: 238.93s, train loss: 2297.1905]
+Sun 21 Jun 2026 12:20:38 INFO  epoch 21 evaluating [time: 4.07s, valid_score: 0.170300]
+Sun 21 Jun 2026 12:20:38 INFO  valid result: 
+hit@1 : 0.0723    hit@5 : 0.1386    hit@10 : 0.1703    hit@20 : 0.1963    ndcg@1 : 0.0723    ndcg@5 : 0.1065    ndcg@10 : 0.1168    ndcg@20 : 0.1234
+Sun 21 Jun 2026 12:20:39 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:24:42 INFO  epoch 22 training [time: 242.45s, train loss: 2248.8477]
+Sun 21 Jun 2026 12:24:46 INFO  epoch 22 evaluating [time: 4.02s, valid_score: 0.171300]
+Sun 21 Jun 2026 12:24:46 INFO  valid result: 
+hit@1 : 0.0716    hit@5 : 0.1366    hit@10 : 0.1713    hit@20 : 0.1964    ndcg@1 : 0.0716    ndcg@5 : 0.1054    ndcg@10 : 0.1167    ndcg@20 : 0.1231
+Sun 21 Jun 2026 12:24:48 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:28:46 INFO  epoch 23 training [time: 238.42s, train loss: 2201.4178]
+Sun 21 Jun 2026 12:28:50 INFO  epoch 23 evaluating [time: 3.95s, valid_score: 0.170300]
+Sun 21 Jun 2026 12:28:50 INFO  valid result: 
+hit@1 : 0.0709    hit@5 : 0.1359    hit@10 : 0.1703    hit@20 : 0.1971    ndcg@1 : 0.0709    ndcg@5 : 0.1046    ndcg@10 : 0.1157    ndcg@20 : 0.1225
+Sun 21 Jun 2026 12:32:57 INFO  epoch 24 training [time: 246.77s, train loss: 2158.2514]
+Sun 21 Jun 2026 12:33:01 INFO  epoch 24 evaluating [time: 4.00s, valid_score: 0.171900]
+Sun 21 Jun 2026 12:33:01 INFO  valid result: 
+hit@1 : 0.0727    hit@5 : 0.1365    hit@10 : 0.1719    hit@20 : 0.1971    ndcg@1 : 0.0727    ndcg@5 : 0.1057    ndcg@10 : 0.1172    ndcg@20 : 0.1236
+Sun 21 Jun 2026 12:33:02 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:37:08 INFO  epoch 25 training [time: 245.39s, train loss: 2114.9342]
+Sun 21 Jun 2026 12:37:12 INFO  epoch 25 evaluating [time: 4.18s, valid_score: 0.172300]
+Sun 21 Jun 2026 12:37:12 INFO  valid result: 
+hit@1 : 0.0708    hit@5 : 0.1361    hit@10 : 0.1723    hit@20 : 0.1974    ndcg@1 : 0.0708    ndcg@5 : 0.1047    ndcg@10 : 0.1163    ndcg@20 : 0.1227
+Sun 21 Jun 2026 12:37:14 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:41:25 INFO  epoch 26 training [time: 250.63s, train loss: 2074.0644]
+Sun 21 Jun 2026 12:41:29 INFO  epoch 26 evaluating [time: 4.02s, valid_score: 0.172600]
+Sun 21 Jun 2026 12:41:29 INFO  valid result: 
+hit@1 : 0.0719    hit@5 : 0.1365    hit@10 : 0.1726    hit@20 : 0.1961    ndcg@1 : 0.0719    ndcg@5 : 0.1051    ndcg@10 : 0.1168    ndcg@20 : 0.1227
+Sun 21 Jun 2026 12:41:30 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:45:16 INFO  epoch 27 training [time: 226.04s, train loss: 2034.4300]
+Sun 21 Jun 2026 12:45:20 INFO  epoch 27 evaluating [time: 3.96s, valid_score: 0.173100]
+Sun 21 Jun 2026 12:45:20 INFO  valid result: 
+hit@1 : 0.0716    hit@5 : 0.1372    hit@10 : 0.1731    hit@20 : 0.198    ndcg@1 : 0.0716    ndcg@5 : 0.1054    ndcg@10 : 0.117    ndcg@20 : 0.1232
+Sun 21 Jun 2026 12:45:22 INFO  Saving current: saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 12:49:07 INFO  epoch 28 training [time: 225.15s, train loss: 1996.3979]
+Sun 21 Jun 2026 12:49:11 INFO  epoch 28 evaluating [time: 3.97s, valid_score: 0.172800]
+Sun 21 Jun 2026 12:49:11 INFO  valid result: 
+hit@1 : 0.0716    hit@5 : 0.1361    hit@10 : 0.1728    hit@20 : 0.198    ndcg@1 : 0.0716    ndcg@5 : 0.1052    ndcg@10 : 0.117    ndcg@20 : 0.1234
+Sun 21 Jun 2026 12:52:55 INFO  epoch 29 training [time: 224.19s, train loss: 1959.4309]
+Sun 21 Jun 2026 12:52:59 INFO  epoch 29 evaluating [time: 3.97s, valid_score: 0.171700]
+Sun 21 Jun 2026 12:52:59 INFO  valid result: 
+hit@1 : 0.073    hit@5 : 0.1377    hit@10 : 0.1717    hit@20 : 0.1987    ndcg@1 : 0.073    ndcg@5 : 0.1064    ndcg@10 : 0.1174    ndcg@20 : 0.1243
+Sun 21 Jun 2026 12:56:44 INFO  epoch 30 training [time: 224.77s, train loss: 1924.6318]
+Sun 21 Jun 2026 12:56:48 INFO  epoch 30 evaluating [time: 3.96s, valid_score: 0.172200]
+Sun 21 Jun 2026 12:56:48 INFO  valid result: 
+hit@1 : 0.0721    hit@5 : 0.1373    hit@10 : 0.1722    hit@20 : 0.1984    ndcg@1 : 0.0721    ndcg@5 : 0.1059    ndcg@10 : 0.1171    ndcg@20 : 0.1238
+Sun 21 Jun 2026 13:00:32 INFO  epoch 31 training [time: 223.72s, train loss: 1892.3099]
+Sun 21 Jun 2026 13:00:36 INFO  epoch 31 evaluating [time: 3.97s, valid_score: 0.171700]
+Sun 21 Jun 2026 13:00:36 INFO  valid result: 
+hit@1 : 0.0713    hit@5 : 0.1371    hit@10 : 0.1717    hit@20 : 0.1981    ndcg@1 : 0.0713    ndcg@5 : 0.1054    ndcg@10 : 0.1165    ndcg@20 : 0.1232
+Sun 21 Jun 2026 13:04:20 INFO  epoch 32 training [time: 224.69s, train loss: 1860.1776]
+Sun 21 Jun 2026 13:04:24 INFO  epoch 32 evaluating [time: 3.97s, valid_score: 0.171400]
+Sun 21 Jun 2026 13:04:24 INFO  valid result: 
+hit@1 : 0.0716    hit@5 : 0.1367    hit@10 : 0.1714    hit@20 : 0.1967    ndcg@1 : 0.0716    ndcg@5 : 0.1055    ndcg@10 : 0.1167    ndcg@20 : 0.1231
+Sun 21 Jun 2026 13:04:24 INFO  Finished training, best eval result in epoch 27
+Sun 21 Jun 2026 13:04:25 INFO  Loading model structure and parameters from saved\TeaRec-Jun-21-2026_10-54-11.pth
+Sun 21 Jun 2026 13:04:33 INFO  best valid : OrderedDict([('hit@1', 0.0716), ('hit@5', 0.1372), ('hit@10', 0.1731), ('hit@20', 0.198), ('ndcg@1', 0.0716), ('ndcg@5', 0.1054), ('ndcg@10', 0.117), ('ndcg@20', 0.1232)])
+Sun 21 Jun 2026 13:04:33 INFO  test result: OrderedDict([('hit@1', 0.072), ('hit@5', 0.14), ('hit@10', 0.1721), ('hit@20', 0.1982), ('ndcg@1', 0.072), ('ndcg@5', 0.1075), ('ndcg@10', 0.1179), ('ndcg@20', 0.1246)])

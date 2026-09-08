@@ -1,0 +1,470 @@
+Sat 11 Jul 2026 14:15:19 INFO  [Training]: train_batch_size = [128] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Sat 11 Jul 2026 14:15:19 INFO  [Evaluation]: eval_batch_size = [256] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Sat 11 Jul 2026 14:15:19 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = d:/code/EffiPOI-main/data/NYC
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 1000000
+train_batch_size = 128
+learner = adam
+learning_rate = 3e-05
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 2
+clip_grad_norm = None
+weight_decay = 1e-05
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = True
+metrics = ['HIT', 'NDCG']
+topk = [1, 5, 10, 20]
+valid_metric = HIT@10
+valid_metric_bigger = True
+eval_batch_size = 256
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = time_seq
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id_list', 'item_id']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [0,inf)
+item_inter_num_interval = [0,inf)
+alias_of_user_id = None
+alias_of_item_id = ['item_id_list']
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = ['train', 'valid', 'test']
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.SEQUENTIAL
+code_dim = 64
+code_cap = 256
+temperature = 0.07
+n_layers = 2
+n_heads = 2
+hidden_size = 64
+inner_size = 256
+hidden_dropout_prob = 0.3
+attn_dropout_prob = 0.3
+hidden_act = gelu
+layer_norm_eps = 1e-12
+initializer_range = 0.02
+use_item_residual = True
+residual_weight = 0.1
+use_multi_interest = False
+num_interests = 1
+use_graph_feature = False
+use_graph_logit = False
+student_graph_alpha = 0.0
+graph_logit_alpha = 0.0
+graph_logit_scale = 80.0
+use_local_rerank = False
+local_rerank_topk = 20
+local_graph_beta = 0.0
+local_graph_2hop_ratio = 0.0
+local_repeat_beta = 0.0
+local_interest_beta = 0.0
+flow_inner_weight = 0.2
+flow_target_weight = 1.0
+flow_smoothing = 1e-08
+flow_topk = 0
+use_2hop_flow = True
+flow_2hop_weight = 0.05
+graph_alpha = 0.004
+graph_score_clip = 2.0
+use_flow_in_train = False
+target_aware_graph_pooling = False
+teacher_use_multi_interest = True
+teacher_num_interests = 4
+teacher_mic_aggregation = max
+teacher_orth_weight = 0.01
+teacher_use_flow_multi_rerank = True
+teacher_flow_multi_topk = 20
+teacher_flow_multi_beta = 0.015
+teacher_flow_rerank_recent = 1
+teacher_flow_rerank_scale = 100.0
+teacher_flow_rerank_keep = 1
+teacher_flow_rerank_confidence = 0.3
+teacher_flow_rerank_primary_bonus = 0.0
+ce_temperature = 0.1
+ce_loss_weight = 1.0
+distill_loss_weight = 20.0
+distill_temperature = 3.0
+distill_topk = 100
+use_tfkd = True
+tfkd_topk = 100
+tfkd_graph_topk = 30
+use_tfpq = False
+tfpq_loss_weight = 0.5
+tfpq_graph_topk = 10
+pure_student = True
+rank_loss_weight = 0.0
+rank_topk = 30
+rank_margin = 0.05
+graph_rank_loss_weight = 0.0
+graph_rank_topk = 10
+mse_loss_weight = 0.0
+contrastive_loss_weight = 0.0
+teacher_hidden_size = 300
+single_spec = True
+ddp = False
+unisrec_transform = None
+dataset_class = StuRecDataset
+teacher_variant = T1
+self_rank_topk = 30
+hard_neg_topk = 100
+hard_neg_num = 10
+graph_hard_neg_topk = 50
+train_stage = transductive_ft
+rebuild_gtf = False
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+device = cuda
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+plm_size = 1664
+
+
+Sat 11 Jul 2026 14:15:19 INFO  Running pure S1: plain PQKD Student + TF-KD only.
+Sat 11 Jul 2026 14:15:19 INFO  [E4] Shared full graph attached to teacher and student. feature_shape=(3947, 3947), sparse_logit=False
+Sat 11 Jul 2026 14:15:23 INFO  Loading T1 teacher: GTF=True, MIC=False, MIFG=False; checkpoint=saved\TeaRec-Jun-08-2026_15-44-02.pth
+Sat 11 Jul 2026 14:15:24 INFO  Teacher loaded. matched=95, skipped=0, missing=0, unexpected=0
+Sat 11 Jul 2026 14:15:24 INFO  Preserved formal E4 runtime graph buffers: ['graph_matrix']
+Sat 11 Jul 2026 14:19:59 INFO  epoch 0 loss components: ce: 8.248952    kd_raw: 0.012183    kd_weighted: 0.243669    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547325    teacher_top10_mean: 0.483856    teacher_score_std: 0.087260    total: 8.492622
+Sat 11 Jul 2026 14:19:59 INFO  epoch 0 training [time: 261.94s, train loss: 6403.4369]
+Sat 11 Jul 2026 14:19:59 INFO  epoch 0 evaluating [time: 0.07s, valid_score: 0.050000]
+Sat 11 Jul 2026 14:19:59 INFO  valid result: 
+hit@1 : 0.012    hit@5 : 0.0334    hit@10 : 0.05    hit@20 : 0.0769    ndcg@1 : 0.012    ndcg@5 : 0.0242    ndcg@10 : 0.0295    ndcg@20 : 0.0362
+Sat 11 Jul 2026 14:19:59 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:24:03 INFO  epoch 1 loss components: ce: 7.866092    kd_raw: 0.011280    kd_weighted: 0.225606    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547178    teacher_top10_mean: 0.483817    teacher_score_std: 0.087262    total: 8.091698
+Sat 11 Jul 2026 14:24:03 INFO  epoch 1 training [time: 244.14s, train loss: 6101.1403]
+Sat 11 Jul 2026 14:24:03 INFO  epoch 1 evaluating [time: 0.04s, valid_score: 0.119600]
+Sat 11 Jul 2026 14:24:03 INFO  valid result: 
+hit@1 : 0.0259    hit@5 : 0.088    hit@10 : 0.1196    hit@20 : 0.1585    ndcg@1 : 0.0259    ndcg@5 : 0.058    ndcg@10 : 0.0681    ndcg@20 : 0.0778
+Sat 11 Jul 2026 14:24:03 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:28:49 INFO  epoch 2 loss components: ce: 7.303232    kd_raw: 0.011414    kd_weighted: 0.228274    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547265    teacher_top10_mean: 0.483884    teacher_score_std: 0.087265    total: 7.531505
+Sat 11 Jul 2026 14:28:49 INFO  epoch 2 training [time: 285.22s, train loss: 5678.7551]
+Sat 11 Jul 2026 14:28:49 INFO  epoch 2 evaluating [time: 0.04s, valid_score: 0.226100]
+Sat 11 Jul 2026 14:28:49 INFO  valid result: 
+hit@1 : 0.152    hit@5 : 0.2104    hit@10 : 0.2261    hit@20 : 0.2437    ndcg@1 : 0.152    ndcg@5 : 0.1849    ndcg@10 : 0.19    ndcg@20 : 0.1945
+Sat 11 Jul 2026 14:28:49 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:33:07 INFO  epoch 3 loss components: ce: 6.723318    kd_raw: 0.011229    kd_weighted: 0.224590    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547334    teacher_top10_mean: 0.483846    teacher_score_std: 0.087261    total: 6.947908
+Sat 11 Jul 2026 14:33:07 INFO  epoch 3 training [time: 258.54s, train loss: 5238.7228]
+Sat 11 Jul 2026 14:33:07 INFO  epoch 3 evaluating [time: 0.04s, valid_score: 0.258600]
+Sat 11 Jul 2026 14:33:07 INFO  valid result: 
+hit@1 : 0.152    hit@5 : 0.241    hit@10 : 0.2586    hit@20 : 0.2734    ndcg@1 : 0.152    ndcg@5 : 0.2029    ndcg@10 : 0.2086    ndcg@20 : 0.2123
+Sat 11 Jul 2026 14:33:08 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:36:41 INFO  epoch 4 loss components: ce: 6.332090    kd_raw: 0.010843    kd_weighted: 0.216856    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547340    teacher_top10_mean: 0.483884    teacher_score_std: 0.087264    total: 6.548946
+Sat 11 Jul 2026 14:36:41 INFO  epoch 4 training [time: 213.83s, train loss: 4937.9055]
+Sat 11 Jul 2026 14:36:42 INFO  epoch 4 evaluating [time: 0.03s, valid_score: 0.293800]
+Sat 11 Jul 2026 14:36:42 INFO  valid result: 
+hit@1 : 0.1557    hit@5 : 0.2669    hit@10 : 0.2938    hit@20 : 0.3253    ndcg@1 : 0.1557    ndcg@5 : 0.2179    ndcg@10 : 0.2265    ndcg@20 : 0.2344
+Sat 11 Jul 2026 14:36:42 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:40:16 INFO  epoch 5 loss components: ce: 6.005640    kd_raw: 0.010606    kd_weighted: 0.212114    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547255    teacher_top10_mean: 0.483816    teacher_score_std: 0.087267    total: 6.217754
+Sat 11 Jul 2026 14:40:16 INFO  epoch 5 training [time: 214.31s, train loss: 4688.1865]
+Sat 11 Jul 2026 14:40:16 INFO  epoch 5 evaluating [time: 0.03s, valid_score: 0.330900]
+Sat 11 Jul 2026 14:40:16 INFO  valid result: 
+hit@1 : 0.1603    hit@5 : 0.3003    hit@10 : 0.3309    hit@20 : 0.3568    ndcg@1 : 0.1603    ndcg@5 : 0.2374    ndcg@10 : 0.2473    ndcg@20 : 0.2538
+Sat 11 Jul 2026 14:40:16 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:43:49 INFO  epoch 6 loss components: ce: 5.633549    kd_raw: 0.010369    kd_weighted: 0.207384    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547310    teacher_top10_mean: 0.483877    teacher_score_std: 0.087257    total: 5.840933
+Sat 11 Jul 2026 14:43:49 INFO  epoch 6 training [time: 212.71s, train loss: 4404.0637]
+Sat 11 Jul 2026 14:43:49 INFO  epoch 6 evaluating [time: 0.04s, valid_score: 0.364200]
+Sat 11 Jul 2026 14:43:49 INFO  valid result: 
+hit@1 : 0.1705    hit@5 : 0.3244    hit@10 : 0.3642    hit@20 : 0.3883    ndcg@1 : 0.1705    ndcg@5 : 0.2558    ndcg@10 : 0.2687    ndcg@20 : 0.2748
+Sat 11 Jul 2026 14:43:49 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:47:22 INFO  epoch 7 loss components: ce: 5.221343    kd_raw: 0.010117    kd_weighted: 0.202333    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547241    teacher_top10_mean: 0.483820    teacher_score_std: 0.087261    total: 5.423676
+Sat 11 Jul 2026 14:47:22 INFO  epoch 7 training [time: 213.42s, train loss: 4089.4515]
+Sat 11 Jul 2026 14:47:23 INFO  epoch 7 evaluating [time: 0.03s, valid_score: 0.391100]
+Sat 11 Jul 2026 14:47:23 INFO  valid result: 
+hit@1 : 0.1798    hit@5 : 0.3531    hit@10 : 0.3911    hit@20 : 0.431    ndcg@1 : 0.1798    ndcg@5 : 0.2743    ndcg@10 : 0.2869    ndcg@20 : 0.2969
+Sat 11 Jul 2026 14:47:23 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:50:56 INFO  epoch 8 loss components: ce: 4.909306    kd_raw: 0.009804    kd_weighted: 0.196082    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547319    teacher_top10_mean: 0.483907    teacher_score_std: 0.087260    total: 5.105388
+Sat 11 Jul 2026 14:50:56 INFO  epoch 8 training [time: 213.52s, train loss: 3849.4624]
+Sat 11 Jul 2026 14:50:56 INFO  epoch 8 evaluating [time: 0.04s, valid_score: 0.412400]
+Sat 11 Jul 2026 14:50:56 INFO  valid result: 
+hit@1 : 0.1835    hit@5 : 0.3726    hit@10 : 0.4124    hit@20 : 0.4523    ndcg@1 : 0.1835    ndcg@5 : 0.2862    ndcg@10 : 0.2993    ndcg@20 : 0.3096
+Sat 11 Jul 2026 14:50:56 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:54:30 INFO  epoch 9 loss components: ce: 4.689632    kd_raw: 0.009535    kd_weighted: 0.190704    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547291    teacher_top10_mean: 0.483833    teacher_score_std: 0.087262    total: 4.880336
+Sat 11 Jul 2026 14:54:30 INFO  epoch 9 training [time: 213.49s, train loss: 3679.7730]
+Sat 11 Jul 2026 14:54:30 INFO  epoch 9 evaluating [time: 0.04s, valid_score: 0.440200]
+Sat 11 Jul 2026 14:54:30 INFO  valid result: 
+hit@1 : 0.1826    hit@5 : 0.3892    hit@10 : 0.4402    hit@20 : 0.4884    ndcg@1 : 0.1826    ndcg@5 : 0.2955    ndcg@10 : 0.3122    ndcg@20 : 0.3244
+Sat 11 Jul 2026 14:54:30 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 14:58:03 INFO  epoch 10 loss components: ce: 4.517364    kd_raw: 0.009298    kd_weighted: 0.185953    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547294    teacher_top10_mean: 0.483802    teacher_score_std: 0.087260    total: 4.703317
+Sat 11 Jul 2026 14:58:03 INFO  epoch 10 training [time: 213.39s, train loss: 3546.3012]
+Sat 11 Jul 2026 14:58:03 INFO  epoch 10 evaluating [time: 0.04s, valid_score: 0.465200]
+Sat 11 Jul 2026 14:58:03 INFO  valid result: 
+hit@1 : 0.1854    hit@5 : 0.4087    hit@10 : 0.4652    hit@20 : 0.5209    ndcg@1 : 0.1854    ndcg@5 : 0.3067    ndcg@10 : 0.3252    ndcg@20 : 0.3391
+Sat 11 Jul 2026 14:58:04 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:01:37 INFO  epoch 11 loss components: ce: 4.382282    kd_raw: 0.009052    kd_weighted: 0.181034    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547255    teacher_top10_mean: 0.483840    teacher_score_std: 0.087266    total: 4.563316
+Sat 11 Jul 2026 15:01:37 INFO  epoch 11 training [time: 213.34s, train loss: 3440.7402]
+Sat 11 Jul 2026 15:01:37 INFO  epoch 11 evaluating [time: 0.03s, valid_score: 0.494900]
+Sat 11 Jul 2026 15:01:37 INFO  valid result: 
+hit@1 : 0.1854    hit@5 : 0.4263    hit@10 : 0.4949    hit@20 : 0.5431    ndcg@1 : 0.1854    ndcg@5 : 0.3166    ndcg@10 : 0.3388    ndcg@20 : 0.351
+Sat 11 Jul 2026 15:01:37 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:05:10 INFO  epoch 12 loss components: ce: 4.271597    kd_raw: 0.008861    kd_weighted: 0.177222    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547204    teacher_top10_mean: 0.483853    teacher_score_std: 0.087263    total: 4.448819
+Sat 11 Jul 2026 15:05:10 INFO  epoch 12 training [time: 213.06s, train loss: 3354.4096]
+Sat 11 Jul 2026 15:05:10 INFO  epoch 12 evaluating [time: 0.03s, valid_score: 0.507000]
+Sat 11 Jul 2026 15:05:10 INFO  valid result: 
+hit@1 : 0.1891    hit@5 : 0.4328    hit@10 : 0.507    hit@20 : 0.557    ndcg@1 : 0.1891    ndcg@5 : 0.3225    ndcg@10 : 0.3467    ndcg@20 : 0.3595
+Sat 11 Jul 2026 15:05:10 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:08:44 INFO  epoch 13 loss components: ce: 4.179420    kd_raw: 0.008690    kd_weighted: 0.173795    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547344    teacher_top10_mean: 0.483895    teacher_score_std: 0.087263    total: 4.353215
+Sat 11 Jul 2026 15:08:44 INFO  epoch 13 training [time: 213.67s, train loss: 3282.3241]
+Sat 11 Jul 2026 15:08:44 INFO  epoch 13 evaluating [time: 0.04s, valid_score: 0.519000]
+Sat 11 Jul 2026 15:08:44 INFO  valid result: 
+hit@1 : 0.1891    hit@5 : 0.4449    hit@10 : 0.519    hit@20 : 0.5709    ndcg@1 : 0.1891    ndcg@5 : 0.3293    ndcg@10 : 0.3538    ndcg@20 : 0.3669
+Sat 11 Jul 2026 15:08:44 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:12:18 INFO  epoch 14 loss components: ce: 4.101590    kd_raw: 0.008536    kd_weighted: 0.170720    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547209    teacher_top10_mean: 0.483860    teacher_score_std: 0.087257    total: 4.272309
+Sat 11 Jul 2026 15:12:18 INFO  epoch 14 training [time: 213.45s, train loss: 3221.3212]
+Sat 11 Jul 2026 15:12:18 INFO  epoch 14 evaluating [time: 0.04s, valid_score: 0.528300]
+Sat 11 Jul 2026 15:12:18 INFO  valid result: 
+hit@1 : 0.1937    hit@5 : 0.4606    hit@10 : 0.5283    hit@20 : 0.5829    ndcg@1 : 0.1937    ndcg@5 : 0.3402    ndcg@10 : 0.3624    ndcg@20 : 0.3762
+Sat 11 Jul 2026 15:12:18 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:15:51 INFO  epoch 15 loss components: ce: 4.037914    kd_raw: 0.008402    kd_weighted: 0.168037    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547244    teacher_top10_mean: 0.483837    teacher_score_std: 0.087262    total: 4.205951
+Sat 11 Jul 2026 15:15:51 INFO  epoch 15 training [time: 212.73s, train loss: 3171.2874]
+Sat 11 Jul 2026 15:15:51 INFO  epoch 15 evaluating [time: 0.04s, valid_score: 0.541200]
+Sat 11 Jul 2026 15:15:51 INFO  valid result: 
+hit@1 : 0.2132    hit@5 : 0.4699    hit@10 : 0.5412    hit@20 : 0.582    ndcg@1 : 0.2132    ndcg@5 : 0.3527    ndcg@10 : 0.3762    ndcg@20 : 0.3865
+Sat 11 Jul 2026 15:15:51 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:19:24 INFO  epoch 16 loss components: ce: 3.984641    kd_raw: 0.008259    kd_weighted: 0.165181    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547255    teacher_top10_mean: 0.483903    teacher_score_std: 0.087265    total: 4.149822
+Sat 11 Jul 2026 15:19:24 INFO  epoch 16 training [time: 213.33s, train loss: 3128.9656]
+Sat 11 Jul 2026 15:19:24 INFO  epoch 16 evaluating [time: 0.04s, valid_score: 0.547700]
+Sat 11 Jul 2026 15:19:24 INFO  valid result: 
+hit@1 : 0.2169    hit@5 : 0.4782    hit@10 : 0.5477    hit@20 : 0.5894    ndcg@1 : 0.2169    ndcg@5 : 0.3589    ndcg@10 : 0.3816    ndcg@20 : 0.392
+Sat 11 Jul 2026 15:19:24 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:22:57 INFO  epoch 17 loss components: ce: 3.939402    kd_raw: 0.008139    kd_weighted: 0.162785    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547244    teacher_top10_mean: 0.483827    teacher_score_std: 0.087263    total: 4.102187
+Sat 11 Jul 2026 15:22:57 INFO  epoch 17 training [time: 212.65s, train loss: 3093.0491]
+Sat 11 Jul 2026 15:22:57 INFO  epoch 17 evaluating [time: 0.03s, valid_score: 0.551400]
+Sat 11 Jul 2026 15:22:57 INFO  valid result: 
+hit@1 : 0.2224    hit@5 : 0.4829    hit@10 : 0.5514    hit@20 : 0.595    ndcg@1 : 0.2224    ndcg@5 : 0.3644    ndcg@10 : 0.3869    ndcg@20 : 0.3977
+Sat 11 Jul 2026 15:22:57 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:26:31 INFO  epoch 18 loss components: ce: 3.899650    kd_raw: 0.008029    kd_weighted: 0.160583    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547176    teacher_top10_mean: 0.483782    teacher_score_std: 0.087264    total: 4.060233
+Sat 11 Jul 2026 15:26:31 INFO  epoch 18 training [time: 213.75s, train loss: 3061.4153]
+Sat 11 Jul 2026 15:26:31 INFO  epoch 18 evaluating [time: 0.03s, valid_score: 0.556100]
+Sat 11 Jul 2026 15:26:31 INFO  valid result: 
+hit@1 : 0.2271    hit@5 : 0.4856    hit@10 : 0.5561    hit@20 : 0.5968    ndcg@1 : 0.2271    ndcg@5 : 0.3683    ndcg@10 : 0.3915    ndcg@20 : 0.4017
+Sat 11 Jul 2026 15:26:31 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:30:04 INFO  epoch 19 loss components: ce: 3.860585    kd_raw: 0.007906    kd_weighted: 0.158123    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547223    teacher_top10_mean: 0.483878    teacher_score_std: 0.087263    total: 4.018707
+Sat 11 Jul 2026 15:30:04 INFO  epoch 19 training [time: 213.10s, train loss: 3030.1053]
+Sat 11 Jul 2026 15:30:04 INFO  epoch 19 evaluating [time: 0.03s, valid_score: 0.559800]
+Sat 11 Jul 2026 15:30:04 INFO  valid result: 
+hit@1 : 0.2298    hit@5 : 0.4903    hit@10 : 0.5598    hit@20 : 0.6024    ndcg@1 : 0.2298    ndcg@5 : 0.3713    ndcg@10 : 0.3944    ndcg@20 : 0.4052
+Sat 11 Jul 2026 15:30:04 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:33:38 INFO  epoch 20 loss components: ce: 3.830227    kd_raw: 0.007813    kd_weighted: 0.156262    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547276    teacher_top10_mean: 0.483799    teacher_score_std: 0.087256    total: 3.986489
+Sat 11 Jul 2026 15:33:38 INFO  epoch 20 training [time: 213.22s, train loss: 3005.8129]
+Sat 11 Jul 2026 15:33:38 INFO  epoch 20 evaluating [time: 0.04s, valid_score: 0.559800]
+Sat 11 Jul 2026 15:33:38 INFO  valid result: 
+hit@1 : 0.228    hit@5 : 0.493    hit@10 : 0.5598    hit@20 : 0.607    ndcg@1 : 0.228    ndcg@5 : 0.372    ndcg@10 : 0.394    ndcg@20 : 0.4059
+Sat 11 Jul 2026 15:33:38 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:37:10 INFO  epoch 21 loss components: ce: 3.803340    kd_raw: 0.007705    kd_weighted: 0.154108    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547372    teacher_top10_mean: 0.483846    teacher_score_std: 0.087262    total: 3.957449
+Sat 11 Jul 2026 15:37:10 INFO  epoch 21 training [time: 212.56s, train loss: 2983.9162]
+Sat 11 Jul 2026 15:37:10 INFO  epoch 21 evaluating [time: 0.04s, valid_score: 0.563500]
+Sat 11 Jul 2026 15:37:10 INFO  valid result: 
+hit@1 : 0.2363    hit@5 : 0.4949    hit@10 : 0.5635    hit@20 : 0.6061    ndcg@1 : 0.2363    ndcg@5 : 0.377    ndcg@10 : 0.3997    ndcg@20 : 0.4104
+Sat 11 Jul 2026 15:37:11 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:40:45 INFO  epoch 22 loss components: ce: 3.777858    kd_raw: 0.007615    kd_weighted: 0.152296    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547266    teacher_top10_mean: 0.483885    teacher_score_std: 0.087258    total: 3.930154
+Sat 11 Jul 2026 15:40:45 INFO  epoch 22 training [time: 214.17s, train loss: 2963.3361]
+Sat 11 Jul 2026 15:40:45 INFO  epoch 22 evaluating [time: 0.04s, valid_score: 0.564400]
+Sat 11 Jul 2026 15:40:45 INFO  valid result: 
+hit@1 : 0.2373    hit@5 : 0.4921    hit@10 : 0.5644    hit@20 : 0.6089    ndcg@1 : 0.2373    ndcg@5 : 0.3762    ndcg@10 : 0.4001    ndcg@20 : 0.4113
+Sat 11 Jul 2026 15:40:45 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:44:19 INFO  epoch 23 loss components: ce: 3.754733    kd_raw: 0.007531    kd_weighted: 0.150619    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547274    teacher_top10_mean: 0.483848    teacher_score_std: 0.087262    total: 3.905352
+Sat 11 Jul 2026 15:44:19 INFO  epoch 23 training [time: 213.70s, train loss: 2944.6350]
+Sat 11 Jul 2026 15:44:19 INFO  epoch 23 evaluating [time: 0.03s, valid_score: 0.566300]
+Sat 11 Jul 2026 15:44:19 INFO  valid result: 
+hit@1 : 0.2428    hit@5 : 0.4958    hit@10 : 0.5663    hit@20 : 0.6126    ndcg@1 : 0.2428    ndcg@5 : 0.3802    ndcg@10 : 0.4037    ndcg@20 : 0.4154
+Sat 11 Jul 2026 15:44:19 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:47:53 INFO  epoch 24 loss components: ce: 3.734552    kd_raw: 0.007442    kd_weighted: 0.148837    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547290    teacher_top10_mean: 0.483872    teacher_score_std: 0.087262    total: 3.883389
+Sat 11 Jul 2026 15:47:53 INFO  epoch 24 training [time: 214.41s, train loss: 2928.0754]
+Sat 11 Jul 2026 15:47:53 INFO  epoch 24 evaluating [time: 0.04s, valid_score: 0.570000]
+Sat 11 Jul 2026 15:47:53 INFO  valid result: 
+hit@1 : 0.2456    hit@5 : 0.5005    hit@10 : 0.57    hit@20 : 0.6135    ndcg@1 : 0.2456    ndcg@5 : 0.3826    ndcg@10 : 0.4058    ndcg@20 : 0.4167
+Sat 11 Jul 2026 15:47:53 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:51:27 INFO  epoch 25 loss components: ce: 3.716206    kd_raw: 0.007363    kd_weighted: 0.147267    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547228    teacher_top10_mean: 0.483818    teacher_score_std: 0.087259    total: 3.863472
+Sat 11 Jul 2026 15:51:27 INFO  epoch 25 training [time: 213.94s, train loss: 2913.0582]
+Sat 11 Jul 2026 15:51:27 INFO  epoch 25 evaluating [time: 0.04s, valid_score: 0.576500]
+Sat 11 Jul 2026 15:51:27 INFO  valid result: 
+hit@1 : 0.2456    hit@5 : 0.507    hit@10 : 0.5765    hit@20 : 0.6154    ndcg@1 : 0.2456    ndcg@5 : 0.3856    ndcg@10 : 0.4084    ndcg@20 : 0.4182
+Sat 11 Jul 2026 15:51:28 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:55:01 INFO  epoch 26 loss components: ce: 3.700669    kd_raw: 0.007284    kd_weighted: 0.145681    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547337    teacher_top10_mean: 0.483876    teacher_score_std: 0.087263    total: 3.846350
+Sat 11 Jul 2026 15:55:01 INFO  epoch 26 training [time: 213.67s, train loss: 2900.1478]
+Sat 11 Jul 2026 15:55:01 INFO  epoch 26 evaluating [time: 0.04s, valid_score: 0.578300]
+Sat 11 Jul 2026 15:55:01 INFO  valid result: 
+hit@1 : 0.2512    hit@5 : 0.5107    hit@10 : 0.5783    hit@20 : 0.6172    ndcg@1 : 0.2512    ndcg@5 : 0.3894    ndcg@10 : 0.4117    ndcg@20 : 0.4215
+Sat 11 Jul 2026 15:55:01 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 15:58:37 INFO  epoch 27 loss components: ce: 3.685168    kd_raw: 0.007215    kd_weighted: 0.144295    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547272    teacher_top10_mean: 0.483823    teacher_score_std: 0.087259    total: 3.829463
+Sat 11 Jul 2026 15:58:37 INFO  epoch 27 training [time: 215.63s, train loss: 2887.4149]
+Sat 11 Jul 2026 15:58:37 INFO  epoch 27 evaluating [time: 0.04s, valid_score: 0.576500]
+Sat 11 Jul 2026 15:58:37 INFO  valid result: 
+hit@1 : 0.2493    hit@5 : 0.5125    hit@10 : 0.5765    hit@20 : 0.6191    ndcg@1 : 0.2493    ndcg@5 : 0.3898    ndcg@10 : 0.411    ndcg@20 : 0.4218
+Sat 11 Jul 2026 16:02:23 INFO  epoch 28 loss components: ce: 3.668394    kd_raw: 0.007143    kd_weighted: 0.142862    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547223    teacher_top10_mean: 0.483849    teacher_score_std: 0.087263    total: 3.811256
+Sat 11 Jul 2026 16:02:23 INFO  epoch 28 training [time: 225.60s, train loss: 2873.6873]
+Sat 11 Jul 2026 16:02:23 INFO  epoch 28 evaluating [time: 0.08s, valid_score: 0.575500]
+Sat 11 Jul 2026 16:02:23 INFO  valid result: 
+hit@1 : 0.2484    hit@5 : 0.5107    hit@10 : 0.5755    hit@20 : 0.6209    ndcg@1 : 0.2484    ndcg@5 : 0.3885    ndcg@10 : 0.4102    ndcg@20 : 0.4217
+Sat 11 Jul 2026 16:07:38 INFO  epoch 29 loss components: ce: 3.656424    kd_raw: 0.007089    kd_weighted: 0.141773    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547255    teacher_top10_mean: 0.483848    teacher_score_std: 0.087266    total: 3.798197
+Sat 11 Jul 2026 16:07:38 INFO  epoch 29 training [time: 315.59s, train loss: 2863.8402]
+Sat 11 Jul 2026 16:07:38 INFO  epoch 29 evaluating [time: 0.08s, valid_score: 0.579200]
+Sat 11 Jul 2026 16:07:38 INFO  valid result: 
+hit@1 : 0.2512    hit@5 : 0.5209    hit@10 : 0.5792    hit@20 : 0.6265    ndcg@1 : 0.2512    ndcg@5 : 0.3948    ndcg@10 : 0.4143    ndcg@20 : 0.4263
+Sat 11 Jul 2026 16:07:39 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 16:12:47 INFO  epoch 30 loss components: ce: 3.645013    kd_raw: 0.007020    kd_weighted: 0.140391    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547222    teacher_top10_mean: 0.483866    teacher_score_std: 0.087262    total: 3.785404
+Sat 11 Jul 2026 16:12:47 INFO  epoch 30 training [time: 308.02s, train loss: 2854.1949]
+Sat 11 Jul 2026 16:12:47 INFO  epoch 30 evaluating [time: 0.06s, valid_score: 0.582000]
+Sat 11 Jul 2026 16:12:47 INFO  valid result: 
+hit@1 : 0.2539    hit@5 : 0.5209    hit@10 : 0.582    hit@20 : 0.6219    ndcg@1 : 0.2539    ndcg@5 : 0.3957    ndcg@10 : 0.4158    ndcg@20 : 0.4258
+Sat 11 Jul 2026 16:12:47 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 16:18:01 INFO  epoch 31 loss components: ce: 3.633186    kd_raw: 0.006978    kd_weighted: 0.139552    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547296    teacher_top10_mean: 0.483877    teacher_score_std: 0.087260    total: 3.772738
+Sat 11 Jul 2026 16:18:01 INFO  epoch 31 training [time: 314.19s, train loss: 2844.6445]
+Sat 11 Jul 2026 16:18:01 INFO  epoch 31 evaluating [time: 0.04s, valid_score: 0.580200]
+Sat 11 Jul 2026 16:18:01 INFO  valid result: 
+hit@1 : 0.2567    hit@5 : 0.5181    hit@10 : 0.5802    hit@20 : 0.6256    ndcg@1 : 0.2567    ndcg@5 : 0.3963    ndcg@10 : 0.4171    ndcg@20 : 0.4285
+Sat 11 Jul 2026 16:23:03 INFO  epoch 32 loss components: ce: 3.624937    kd_raw: 0.006923    kd_weighted: 0.138454    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547258    teacher_top10_mean: 0.483858    teacher_score_std: 0.087260    total: 3.763392
+Sat 11 Jul 2026 16:23:03 INFO  epoch 32 training [time: 301.33s, train loss: 2837.5974]
+Sat 11 Jul 2026 16:23:03 INFO  epoch 32 evaluating [time: 0.04s, valid_score: 0.582000]
+Sat 11 Jul 2026 16:23:03 INFO  valid result: 
+hit@1 : 0.253    hit@5 : 0.5236    hit@10 : 0.582    hit@20 : 0.6237    ndcg@1 : 0.253    ndcg@5 : 0.3978    ndcg@10 : 0.4171    ndcg@20 : 0.4277
+Sat 11 Jul 2026 16:23:03 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 16:28:30 INFO  epoch 33 loss components: ce: 3.611999    kd_raw: 0.006882    kd_weighted: 0.137641    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547214    teacher_top10_mean: 0.483827    teacher_score_std: 0.087262    total: 3.749640
+Sat 11 Jul 2026 16:28:30 INFO  epoch 33 training [time: 326.87s, train loss: 2827.2289]
+Sat 11 Jul 2026 16:28:30 INFO  epoch 33 evaluating [time: 0.08s, valid_score: 0.583900]
+Sat 11 Jul 2026 16:28:30 INFO  valid result: 
+hit@1 : 0.2512    hit@5 : 0.5273    hit@10 : 0.5839    hit@20 : 0.6274    ndcg@1 : 0.2512    ndcg@5 : 0.3982    ndcg@10 : 0.4167    ndcg@20 : 0.4278
+Sat 11 Jul 2026 16:28:30 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 16:34:19 INFO  epoch 34 loss components: ce: 3.601848    kd_raw: 0.006833    kd_weighted: 0.136665    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547413    teacher_top10_mean: 0.483842    teacher_score_std: 0.087254    total: 3.738513
+Sat 11 Jul 2026 16:34:19 INFO  epoch 34 training [time: 348.82s, train loss: 2818.8387]
+Sat 11 Jul 2026 16:34:19 INFO  epoch 34 evaluating [time: 0.07s, valid_score: 0.582000]
+Sat 11 Jul 2026 16:34:19 INFO  valid result: 
+hit@1 : 0.253    hit@5 : 0.5218    hit@10 : 0.582    hit@20 : 0.6274    ndcg@1 : 0.253    ndcg@5 : 0.3974    ndcg@10 : 0.4175    ndcg@20 : 0.4291
+Sat 11 Jul 2026 16:40:08 INFO  epoch 35 loss components: ce: 3.595559    kd_raw: 0.006784    kd_weighted: 0.135684    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547298    teacher_top10_mean: 0.483868    teacher_score_std: 0.087261    total: 3.731243
+Sat 11 Jul 2026 16:40:08 INFO  epoch 35 training [time: 349.06s, train loss: 2813.3572]
+Sat 11 Jul 2026 16:40:08 INFO  epoch 35 evaluating [time: 0.08s, valid_score: 0.583900]
+Sat 11 Jul 2026 16:40:08 INFO  valid result: 
+hit@1 : 0.253    hit@5 : 0.5255    hit@10 : 0.5839    hit@20 : 0.6293    ndcg@1 : 0.253    ndcg@5 : 0.3989    ndcg@10 : 0.4184    ndcg@20 : 0.4298
+Sat 11 Jul 2026 16:40:08 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 16:45:58 INFO  epoch 36 loss components: ce: 3.586599    kd_raw: 0.006748    kd_weighted: 0.134970    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547277    teacher_top10_mean: 0.483838    teacher_score_std: 0.087262    total: 3.721569
+Sat 11 Jul 2026 16:45:58 INFO  epoch 36 training [time: 349.90s, train loss: 2806.0627]
+Sat 11 Jul 2026 16:45:58 INFO  epoch 36 evaluating [time: 0.08s, valid_score: 0.585700]
+Sat 11 Jul 2026 16:45:58 INFO  valid result: 
+hit@1 : 0.2512    hit@5 : 0.5264    hit@10 : 0.5857    hit@20 : 0.6265    ndcg@1 : 0.2512    ndcg@5 : 0.3979    ndcg@10 : 0.4175    ndcg@20 : 0.4278
+Sat 11 Jul 2026 16:45:59 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 16:51:50 INFO  epoch 37 loss components: ce: 3.582918    kd_raw: 0.006722    kd_weighted: 0.134439    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547164    teacher_top10_mean: 0.483804    teacher_score_std: 0.087261    total: 3.717357
+Sat 11 Jul 2026 16:51:50 INFO  epoch 37 training [time: 351.09s, train loss: 2802.8875]
+Sat 11 Jul 2026 16:51:50 INFO  epoch 37 evaluating [time: 0.07s, valid_score: 0.584800]
+Sat 11 Jul 2026 16:51:50 INFO  valid result: 
+hit@1 : 0.2549    hit@5 : 0.5246    hit@10 : 0.5848    hit@20 : 0.6265    ndcg@1 : 0.2549    ndcg@5 : 0.3989    ndcg@10 : 0.4188    ndcg@20 : 0.4295
+Sat 11 Jul 2026 16:57:38 INFO  epoch 38 loss components: ce: 3.570509    kd_raw: 0.006673    kd_weighted: 0.133455    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547297    teacher_top10_mean: 0.483878    teacher_score_std: 0.087261    total: 3.703964
+Sat 11 Jul 2026 16:57:38 INFO  epoch 38 training [time: 347.96s, train loss: 2792.7892]
+Sat 11 Jul 2026 16:57:38 INFO  epoch 38 evaluating [time: 0.08s, valid_score: 0.585700]
+Sat 11 Jul 2026 16:57:38 INFO  valid result: 
+hit@1 : 0.2558    hit@5 : 0.5255    hit@10 : 0.5857    hit@20 : 0.6237    ndcg@1 : 0.2558    ndcg@5 : 0.4007    ndcg@10 : 0.4207    ndcg@20 : 0.4303
+Sat 11 Jul 2026 16:57:38 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 17:03:20 INFO  epoch 39 loss components: ce: 3.562940    kd_raw: 0.006644    kd_weighted: 0.132877    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547249    teacher_top10_mean: 0.483862    teacher_score_std: 0.087262    total: 3.695816
+Sat 11 Jul 2026 17:03:20 INFO  epoch 39 training [time: 342.19s, train loss: 2786.6453]
+Sat 11 Jul 2026 17:03:20 INFO  epoch 39 evaluating [time: 0.08s, valid_score: 0.588500]
+Sat 11 Jul 2026 17:03:20 INFO  valid result: 
+hit@1 : 0.2576    hit@5 : 0.5246    hit@10 : 0.5885    hit@20 : 0.6311    ndcg@1 : 0.2576    ndcg@5 : 0.4005    ndcg@10 : 0.4216    ndcg@20 : 0.4323
+Sat 11 Jul 2026 17:03:21 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 17:09:07 INFO  epoch 40 loss components: ce: 3.560824    kd_raw: 0.006615    kd_weighted: 0.132301    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547176    teacher_top10_mean: 0.483854    teacher_score_std: 0.087265    total: 3.693125
+Sat 11 Jul 2026 17:09:07 INFO  epoch 40 training [time: 345.94s, train loss: 2784.6165]
+Sat 11 Jul 2026 17:09:07 INFO  epoch 40 evaluating [time: 0.07s, valid_score: 0.587600]
+Sat 11 Jul 2026 17:09:07 INFO  valid result: 
+hit@1 : 0.2549    hit@5 : 0.5264    hit@10 : 0.5876    hit@20 : 0.6256    ndcg@1 : 0.2549    ndcg@5 : 0.4015    ndcg@10 : 0.4218    ndcg@20 : 0.4315
+Sat 11 Jul 2026 17:14:57 INFO  epoch 41 loss components: ce: 3.553315    kd_raw: 0.006578    kd_weighted: 0.131570    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547199    teacher_top10_mean: 0.483883    teacher_score_std: 0.087258    total: 3.684885
+Sat 11 Jul 2026 17:14:57 INFO  epoch 41 training [time: 350.12s, train loss: 2778.4031]
+Sat 11 Jul 2026 17:14:57 INFO  epoch 41 evaluating [time: 0.08s, valid_score: 0.585700]
+Sat 11 Jul 2026 17:14:57 INFO  valid result: 
+hit@1 : 0.2576    hit@5 : 0.5292    hit@10 : 0.5857    hit@20 : 0.6284    ndcg@1 : 0.2576    ndcg@5 : 0.4025    ndcg@10 : 0.4213    ndcg@20 : 0.4321
+Sat 11 Jul 2026 17:20:43 INFO  epoch 42 loss components: ce: 3.546444    kd_raw: 0.006556    kd_weighted: 0.131111    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547159    teacher_top10_mean: 0.483827    teacher_score_std: 0.087265    total: 3.677555
+Sat 11 Jul 2026 17:20:43 INFO  epoch 42 training [time: 346.32s, train loss: 2772.8763]
+Sat 11 Jul 2026 17:20:43 INFO  epoch 42 evaluating [time: 0.08s, valid_score: 0.590400]
+Sat 11 Jul 2026 17:20:43 INFO  valid result: 
+hit@1 : 0.2576    hit@5 : 0.5292    hit@10 : 0.5904    hit@20 : 0.6274    ndcg@1 : 0.2576    ndcg@5 : 0.4026    ndcg@10 : 0.4228    ndcg@20 : 0.4321
+Sat 11 Jul 2026 17:20:44 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 17:26:26 INFO  epoch 43 loss components: ce: 3.544103    kd_raw: 0.006518    kd_weighted: 0.130368    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547174    teacher_top10_mean: 0.483839    teacher_score_std: 0.087259    total: 3.674471
+Sat 11 Jul 2026 17:26:26 INFO  epoch 43 training [time: 342.67s, train loss: 2770.5513]
+Sat 11 Jul 2026 17:26:26 INFO  epoch 43 evaluating [time: 0.06s, valid_score: 0.588500]
+Sat 11 Jul 2026 17:26:26 INFO  valid result: 
+hit@1 : 0.2567    hit@5 : 0.5264    hit@10 : 0.5885    hit@20 : 0.6348    ndcg@1 : 0.2567    ndcg@5 : 0.4021    ndcg@10 : 0.4226    ndcg@20 : 0.4344
+Sat 11 Jul 2026 17:32:10 INFO  epoch 44 loss components: ce: 3.536905    kd_raw: 0.006499    kd_weighted: 0.129974    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547286    teacher_top10_mean: 0.483888    teacher_score_std: 0.087261    total: 3.666879
+Sat 11 Jul 2026 17:32:10 INFO  epoch 44 training [time: 344.08s, train loss: 2764.8266]
+Sat 11 Jul 2026 17:32:10 INFO  epoch 44 evaluating [time: 0.07s, valid_score: 0.589400]
+Sat 11 Jul 2026 17:32:10 INFO  valid result: 
+hit@1 : 0.2604    hit@5 : 0.5273    hit@10 : 0.5894    hit@20 : 0.6348    ndcg@1 : 0.2604    ndcg@5 : 0.4034    ndcg@10 : 0.424    ndcg@20 : 0.4354
+Sat 11 Jul 2026 17:37:57 INFO  epoch 45 loss components: ce: 3.531292    kd_raw: 0.006479    kd_weighted: 0.129582    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547303    teacher_top10_mean: 0.483854    teacher_score_std: 0.087259    total: 3.660874
+Sat 11 Jul 2026 17:37:57 INFO  epoch 45 training [time: 346.11s, train loss: 2760.2990]
+Sat 11 Jul 2026 17:37:57 INFO  epoch 45 evaluating [time: 0.07s, valid_score: 0.592200]
+Sat 11 Jul 2026 17:37:57 INFO  valid result: 
+hit@1 : 0.2623    hit@5 : 0.5283    hit@10 : 0.5922    hit@20 : 0.6358    ndcg@1 : 0.2623    ndcg@5 : 0.4046    ndcg@10 : 0.4258    ndcg@20 : 0.4368
+Sat 11 Jul 2026 17:37:57 INFO  Saving current: saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 17:43:42 INFO  epoch 46 loss components: ce: 3.528081    kd_raw: 0.006456    kd_weighted: 0.129124    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547301    teacher_top10_mean: 0.483819    teacher_score_std: 0.087262    total: 3.657205
+Sat 11 Jul 2026 17:43:42 INFO  epoch 46 training [time: 344.95s, train loss: 2757.5325]
+Sat 11 Jul 2026 17:43:42 INFO  epoch 46 evaluating [time: 0.07s, valid_score: 0.589400]
+Sat 11 Jul 2026 17:43:42 INFO  valid result: 
+hit@1 : 0.2586    hit@5 : 0.5264    hit@10 : 0.5894    hit@20 : 0.6293    ndcg@1 : 0.2586    ndcg@5 : 0.4024    ndcg@10 : 0.4233    ndcg@20 : 0.4334
+Sat 11 Jul 2026 17:49:29 INFO  epoch 47 loss components: ce: 3.524422    kd_raw: 0.006430    kd_weighted: 0.128597    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547340    teacher_top10_mean: 0.483863    teacher_score_std: 0.087258    total: 3.653019
+Sat 11 Jul 2026 17:49:29 INFO  epoch 47 training [time: 347.11s, train loss: 2754.3767]
+Sat 11 Jul 2026 17:49:29 INFO  epoch 47 evaluating [time: 0.06s, valid_score: 0.590400]
+Sat 11 Jul 2026 17:49:29 INFO  valid result: 
+hit@1 : 0.2632    hit@5 : 0.5292    hit@10 : 0.5904    hit@20 : 0.6302    ndcg@1 : 0.2632    ndcg@5 : 0.4054    ndcg@10 : 0.4257    ndcg@20 : 0.4358
+Sat 11 Jul 2026 17:55:14 INFO  epoch 48 loss components: ce: 3.519610    kd_raw: 0.006406    kd_weighted: 0.128120    tfpq_raw: 0.000000    tfpq_weighted: 0.000000    teacher_pos_mean: 0.547292    teacher_top10_mean: 0.483858    teacher_score_std: 0.087263    total: 3.647730
+Sat 11 Jul 2026 17:55:14 INFO  epoch 48 training [time: 344.82s, train loss: 2750.3884]
+Sat 11 Jul 2026 17:55:14 INFO  epoch 48 evaluating [time: 0.06s, valid_score: 0.590400]
+Sat 11 Jul 2026 17:55:14 INFO  valid result: 
+hit@1 : 0.2595    hit@5 : 0.531    hit@10 : 0.5904    hit@20 : 0.6302    ndcg@1 : 0.2595    ndcg@5 : 0.4048    ndcg@10 : 0.4244    ndcg@20 : 0.4345
+Sat 11 Jul 2026 17:55:14 INFO  Finished training, best eval result in epoch 45
+Sat 11 Jul 2026 17:55:14 INFO  Loading model structure and parameters from saved\StuRec-Jul-11-2026_14-15-24.pth
+Sat 11 Jul 2026 17:55:14 INFO  best valid : OrderedDict([('hit@1', 0.2623), ('hit@5', 0.5283), ('hit@10', 0.5922), ('hit@20', 0.6358), ('ndcg@1', 0.2623), ('ndcg@5', 0.4046), ('ndcg@10', 0.4258), ('ndcg@20', 0.4368)])
+Sat 11 Jul 2026 17:55:14 INFO  test result: OrderedDict([('hit@1', 0.24), ('hit@5', 0.5125), ('hit@10', 0.5755), ('hit@20', 0.6145), ('ndcg@1', 0.24), ('ndcg@5', 0.3862), ('ndcg@10', 0.4067), ('ndcg@20', 0.4164)])

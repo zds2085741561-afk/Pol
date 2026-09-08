@@ -1,0 +1,34 @@
+{
+  "variant": "S3 = S2 + trajectory-flow reranking",
+  "dataset": "NYC",
+  "checkpoint": "saved\\StuRec-Jul-13-2026_12-46-28.pth",
+  "rerank_topk": 20,
+  "selection_metric": [
+    "hit@10",
+    "ndcg@10"
+  ],
+  "validation": [
+    {
+      "beta": 0.015,
+      "hit@1": 0.2614,
+      "hit@5": 0.5264,
+      "hit@10": 0.5996,
+      "hit@20": 0.6321,
+      "ndcg@1": 0.2614,
+      "ndcg@5": 0.4043,
+      "ndcg@10": 0.4286,
+      "ndcg@20": 0.4367
+    }
+  ],
+  "selected_beta": 0.015,
+  "test": {
+    "hit@1": 0.2502,
+    "hit@5": 0.5144,
+    "hit@10": 0.5802,
+    "hit@20": 0.6163,
+    "ndcg@1": 0.2502,
+    "ndcg@5": 0.3917,
+    "ndcg@10": 0.4131,
+    "ndcg@20": 0.4222
+  }
+}

@@ -1,0 +1,53 @@
+Tue 21 Jul 2026 15:00:40 INFO  ======================================================================
+Tue 21 Jul 2026 15:00:40 INFO  [Baseline] BSARec (AAAI 2024) formal comparison
+Tue 21 Jul 2026 15:00:40 INFO  [Dataset] NYC | alpha=0.9 | c=3 | hidden=64 | layers=1 | heads=2
+Tue 21 Jul 2026 15:00:40 INFO  [Protocol] Fixed benchmark split + RecBole full-sort HIT/NDCG
+Tue 21 Jul 2026 15:00:40 INFO  ======================================================================
+Tue 21 Jul 2026 15:00:43 INFO  [Training]: train_batch_size = [128] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Tue 21 Jul 2026 15:00:43 INFO  [Evaluation]: eval_batch_size = [256] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Tue 21 Jul 2026 15:00:43 INFO  BSARecRecBole(
+  (item_embedding): Embedding(3947, 64, padding_idx=0)
+  (position_embedding): Embedding(50, 64)
+  (trm_encoder): BSARecEncoder(
+    (blocks): ModuleList(
+      (0): BSARecBlock(
+        (layer): BSARecLayer(
+          (filter_layer): FrequencyLayer(
+            (out_dropout): Dropout(p=0.2, inplace=False)
+            (layer_norm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          )
+          (attention_layer): MultiHeadAttention(
+            (query): Linear(in_features=64, out_features=64, bias=True)
+            (key): Linear(in_features=64, out_features=64, bias=True)
+            (value): Linear(in_features=64, out_features=64, bias=True)
+            (softmax): Softmax(dim=-1)
+            (attn_dropout): Dropout(p=0.2, inplace=False)
+            (dense): Linear(in_features=64, out_features=64, bias=True)
+            (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+            (out_dropout): Dropout(p=0.2, inplace=False)
+          )
+        )
+        (feed_forward): FeedForward(
+          (dense_1): Linear(in_features=64, out_features=256, bias=True)
+          (dense_2): Linear(in_features=256, out_features=64, bias=True)
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+      )
+    )
+  )
+  (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+  (dropout): Dropout(p=0.2, inplace=False)
+  (loss_fct): CrossEntropyLoss()
+)
+Trainable parameters: 306112
+Tue 21 Jul 2026 15:00:43 INFO  Trainable parameters: 306112
+Tue 21 Jul 2026 15:02:28 INFO  epoch 0 training [time: 101.97s, train loss: 5227.8463]
+Tue 21 Jul 2026 15:02:28 INFO  epoch 0 evaluating [time: 0.23s, valid_score: 0.366100]
+Tue 21 Jul 2026 15:02:28 INFO  valid result: 
+hit@1 : 0.1761    hit@5 : 0.3225    hit@10 : 0.3661    hit@20 : 0.4152    ndcg@1 : 0.1761    ndcg@5 : 0.2559    ndcg@10 : 0.27    ndcg@20 : 0.2823
+Tue 21 Jul 2026 15:02:28 INFO  Saving current: D:\code\EffiPOI-main\baselines\bsarec\saved\BSARecRecBole-Jul-21-2026_15-00-43.pth
+Tue 21 Jul 2026 15:02:28 INFO  [Best checkpoint loaded] D:\code\EffiPOI-main\baselines\bsarec\saved\BSARecRecBole-Jul-21-2026_15-00-43.pth | missing=0, unexpected=0
+Tue 21 Jul 2026 15:02:29 INFO  best valid: OrderedDict([('hit@1', 0.1761), ('hit@5', 0.3225), ('hit@10', 0.3661), ('hit@20', 0.4152), ('ndcg@1', 0.1761), ('ndcg@5', 0.2559), ('ndcg@10', 0.27), ('ndcg@20', 0.2823)])
+Tue 21 Jul 2026 15:02:29 INFO  test result: OrderedDict([('hit@1', 0.1677), ('hit@5', 0.3225), ('hit@10', 0.3689), ('hit@20', 0.4013), ('ndcg@1', 0.1677), ('ndcg@5', 0.2499), ('ndcg@10', 0.2651), ('ndcg@20', 0.2734)])
+Tue 21 Jul 2026 15:02:29 INFO  [Saved] JSON: D:\code\EffiPOI-main\baselines\bsarec\results\BSARec_NYC_smoke.json

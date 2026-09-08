@@ -1,0 +1,17 @@
+{
+  "model": "BSARec",
+  "paper": "Shin et al., AAAI 2024",
+  "dataset": "NYC_STEPS",
+  "protocol": "fixed benchmark split; RecBole full-sort",
+  "checkpoint": "baselines\\bsarec\\saved\\BSARecRecBole-Jul-21-2026_16-02-14.pth",
+  "test_result": {
+    "hit@1": 0.0457,
+    "hit@5": 0.1185,
+    "hit@10": 0.1418,
+    "hit@20": 0.1629,
+    "ndcg@1": 0.0457,
+    "ndcg@5": 0.0845,
+    "ndcg@10": 0.0921,
+    "ndcg@20": 0.0974
+  }
+}

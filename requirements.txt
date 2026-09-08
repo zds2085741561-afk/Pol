@@ -1,0 +1,12 @@
+# Install a PyTorch build appropriate for your CPU/CUDA environment first.
+# Versions here are not a verified environment lock.
+torch
+recbole
+faiss-cpu
+numpy
+scipy
+pandas
+PyYAML
+transformers
+pyarrow
+tqdm

@@ -1,0 +1,17 @@
+{
+  "model": "S2HyRec",
+  "dataset": "NYC",
+  "split": "test",
+  "protocol": "RecBole full-sort",
+  "checkpoint": "baselines\\s2hyrec\\saved\\S2HyRecRecBole-Jul-21-2026_10-36-31.pth",
+  "test_result": {
+    "hit@1": 0.253,
+    "hit@5": 0.507,
+    "hit@10": 0.5765,
+    "hit@20": 0.6284,
+    "ndcg@1": 0.253,
+    "ndcg@5": 0.3859,
+    "ndcg@10": 0.4087,
+    "ndcg@20": 0.4216
+  }
+}

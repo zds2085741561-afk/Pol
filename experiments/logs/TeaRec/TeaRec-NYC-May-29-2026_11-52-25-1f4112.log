@@ -1,0 +1,207 @@
+Fri 29 May 2026 11:52:25 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = d:/code/EffiPOI-main/data/NYC
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 1
+train_batch_size = 128
+learner = adam
+learning_rate = 0.0
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 20
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = True
+metrics = ['HIT', 'NDCG']
+topk = [1, 5, 10, 20]
+valid_metric = HIT@10
+valid_metric_bigger = True
+eval_batch_size = 256
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = time_seq
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id_list', 'item_id']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [0,inf)
+item_inter_num_interval = [0,inf)
+alias_of_user_id = None
+alias_of_item_id = ['item_id_list']
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = ['train', 'valid', 'test']
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.SEQUENTIAL
+n_layers = 4
+n_heads = 4
+hidden_size = 300
+inner_size = 1200
+hidden_dropout_prob = 0.15
+attn_dropout_prob = 0.15
+hidden_act = gelu
+layer_norm_eps = 1e-12
+initializer_range = 0.02
+loss_type = CE
+item_drop_ratio = 0.2
+item_drop_coefficient = 0.9
+lambda = 0.001
+plm_suffix = feat1CLS
+plm_suffix_aug = feat2CLS
+train_stage = transductive_ft
+plm_size = 1664
+adaptor_dropout_prob = 0.1
+adaptor_layers = [1664, 300]
+temperature = 0.07
+n_exps = 4
+sinkhorn_iter = 3
+reassign_steps = 5
+stable_moe = False
+flow_inner_weight = 0.2
+flow_target_weight = 1.0
+flow_smoothing = 1e-08
+flow_topk = 0
+use_2hop_flow = True
+flow_2hop_weight = 0.05
+use_graph_logit = True
+graph_alpha = 0.004
+graph_score_clip = 2.0
+use_flow_in_train = False
+target_aware_graph_pooling = False
+orth_weight = 0.0
+flow_multi_beta = 0.05
+single_spec = True
+ddp = False
+unisrec_transform = None
+dataset_class = TeaRecDataset
+rebuild_flow = False
+device = cuda
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+Fri 29 May 2026 11:52:28 INFO  [Training]: train_batch_size = [128] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Fri 29 May 2026 11:52:28 INFO  [Evaluation]: eval_batch_size = [256] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Fri 29 May 2026 11:52:29 INFO  Loading pretrained model from: saved\TeaRec-May-28-2026_15-22-09.pth
+Fri 29 May 2026 11:52:29 INFO  Loaded pretrained weights. Missing: 0, Unexpected: 0
+Fri 29 May 2026 11:52:29 INFO  Partial Freeze: Only the LAST Transformer layer is trainable!
+Fri 29 May 2026 11:52:29 INFO  TeaRec(
+  (item_embedding): Embedding(3947, 300, padding_idx=0)
+  (position_embedding): Embedding(50, 300)
+  (trm_encoder): TransformerEncoder(
+    (layer): ModuleList(
+      (0-3): 4 x TransformerLayer(
+        (multi_head_attention): MultiHeadAttention(
+          (query): Linear(in_features=300, out_features=300, bias=True)
+          (key): Linear(in_features=300, out_features=300, bias=True)
+          (value): Linear(in_features=300, out_features=300, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.15, inplace=False)
+          (dense): Linear(in_features=300, out_features=300, bias=True)
+          (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.15, inplace=False)
+        )
+        (feed_forward): FeedForward(
+          (dense_1): Linear(in_features=300, out_features=1200, bias=True)
+          (dense_2): Linear(in_features=1200, out_features=300, bias=True)
+          (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.15, inplace=False)
+        )
+      )
+    )
+  )
+  (LayerNorm): LayerNorm((300,), eps=1e-12, elementwise_affine=True)
+  (dropout): Dropout(p=0.15, inplace=False)
+  (loss_fct): CrossEntropyLoss()
+  (moe_adaptor): MoEAdaptorLayer(
+    (experts): ModuleList(
+      (0-3): 4 x Linear(in_features=1664, out_features=300, bias=True)
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+  (graph_proj): Linear(in_features=3947, out_features=300, bias=True)
+  (interest_attention): Sequential(
+    (0): Linear(in_features=300, out_features=150, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=150, out_features=1, bias=True)
+  )
+  (gating_layer): StableDynamicGating(
+    (gate): Sequential(
+      (0): Linear(in_features=600, out_features=300, bias=True)
+      (1): SiLU()
+      (2): Linear(in_features=300, out_features=1, bias=True)
+      (3): Sigmoid()
+    )
+    (graph_transform): Sequential(
+      (0): Linear(in_features=300, out_features=300, bias=True)
+      (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+      (2): Dropout(p=0.3, inplace=False)
+    )
+    (norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+  )
+)
+Trainable parameters: 5781714
+Fri 29 May 2026 11:57:31 INFO  epoch 0 training [time: 299.35s, train loss: 2101.3430]
+Fri 29 May 2026 11:57:31 INFO  epoch 0 evaluating [time: 0.27s, valid_score: 0.601500]
+Fri 29 May 2026 11:57:31 INFO  valid result: 
+hit@1 : 0.2502    hit@5 : 0.5283    hit@10 : 0.6015    hit@20 : 0.6386    ndcg@1 : 0.2502    ndcg@5 : 0.4024    ndcg@10 : 0.4262    ndcg@20 : 0.4356
+Fri 29 May 2026 11:57:31 INFO  Saving current: saved\TeaRec-May-29-2026_11-52-29.pth
+Fri 29 May 2026 11:57:31 INFO  Loading model structure and parameters from saved\TeaRec-May-29-2026_11-52-29.pth
+Fri 29 May 2026 11:57:32 INFO  best valid : OrderedDict([('hit@1', 0.2502), ('hit@5', 0.5283), ('hit@10', 0.6015), ('hit@20', 0.6386), ('ndcg@1', 0.2502), ('ndcg@5', 0.4024), ('ndcg@10', 0.4262), ('ndcg@20', 0.4356)])
+Fri 29 May 2026 11:57:32 INFO  test result: OrderedDict([('hit@1', 0.253), ('hit@5', 0.5042), ('hit@10', 0.5728), ('hit@20', 0.6145), ('ndcg@1', 0.253), ('ndcg@5', 0.3871), ('ndcg@10', 0.4098), ('ndcg@20', 0.4204)])
