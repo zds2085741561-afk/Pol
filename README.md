@@ -32,7 +32,9 @@ python -m pip install -r requirements.txt
 
 ## 数据准备
 
-本仓库已提供 [NYC-STEPS 处理后的划分与编号映射](data/NYC_STEPS/)，原始来源为 [Massive-STEPS-New-York](https://huggingface.co/datasets/CRUISEResearchGroup/Massive-STEPS-New-York)，数据页面标注 Apache-2.0，许可副本及处理说明随数据提供。NYC 数据未重新分发，可参考 [EffiPOI 数据入口](https://github.com/pcm1217/EffiPOI#datasets)；本地 NYC 文件的具体来源和再分发许可仍待确认。
+本仓库已提供 [NYC-STEPS 处理后的划分与编号映射](data/NYC_STEPS/)，原始来源为 [Massive-STEPS-New-York](https://huggingface.co/datasets/CRUISEResearchGroup/Massive-STEPS-New-York)，数据页面标注 Apache-2.0，许可副本及处理说明随数据提供。作者确认 NYC 数据来自 EffiPOI 提供的处理版，请通过 [EffiPOI 数据入口](https://github.com/pcm1217/EffiPOI#datasets) 获取。当前未确认这套 NYC 处理版的再分发许可，因此本仓库暂不镜像 NYC 文件。
+
+论文数据与代码声明：The source code and processed NYC-STEPS splits are available at https://github.com/zds2085741561-afk/Pol. The processed NYC dataset was obtained from EffiPOI and is accessible through the original provider's data link, documented in our repository.
 
 特征矩阵、Faiss 索引和模型权重未包含在仓库中。入口默认数据集名称为 `NYC`，也支持 `NYC_STEPS`。请保持训练、验证和测试划分一致。所需文件放置示例：
 
